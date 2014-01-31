@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SwimDataModelStoreContainer" CdmEntityContainer="SwimDataEntities">
+    <EntitySetMapping Name="Instructors">
+      <EntityTypeMapping TypeName="SwimDataModel.Instructor">
+        <MappingFragment StoreEntitySet="Instructors">
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaneAssignmentDetails">
+      <EntityTypeMapping TypeName="SwimDataModel.LaneAssignmentDetail">
+        <MappingFragment StoreEntitySet="LaneAssignmentDetails">
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="InstructorName" ColumnName="InstructorName" />
+          <ScalarProperty Name="AssignmentType" ColumnName="AssignmentType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoolUsages">
+      <EntityTypeMapping TypeName="SwimDataModel.PoolUsage">
+        <MappingFragment StoreEntitySet="PoolUsage">
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Lane7" ColumnName="Lane7" />
+          <ScalarProperty Name="Lane6" ColumnName="Lane6" />
+          <ScalarProperty Name="Lane5" ColumnName="Lane5" />
+          <ScalarProperty Name="Lane4" ColumnName="Lane4" />
+          <ScalarProperty Name="Lane3" ColumnName="Lane3" />
+          <ScalarProperty Name="Lane2" ColumnName="Lane2" />
+          <ScalarProperty Name="Lane1" ColumnName="Lane1" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SwimDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SwimDataModelStoreContainer">
+    <EntitySet Name="Instructors" EntityType="SwimDataModel.Store.Instructors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LaneAssignmentDetails" EntityType="SwimDataModel.Store.LaneAssignmentDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PoolUsage" EntityType="SwimDataModel.Store.PoolUsage" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Instructors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nchar" MaxLength="10" />
+    <Property Name="LastName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LaneAssignmentDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AssignmentType" Type="varchar" MaxLength="50" />
+    <Property Name="InstructorName" Type="varchar" MaxLength="50" />
+    <Property Name="StudentName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PoolUsage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lane1" Type="int" />
+    <Property Name="Lane2" Type="int" />
+    <Property Name="Lane3" Type="int" />
+    <Property Name="Lane4" Type="int" />
+    <Property Name="Lane5" Type="int" />
+    <Property Name="Lane6" Type="int" />
+    <Property Name="Lane7" Type="int" />
+    <Property Name="Day" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

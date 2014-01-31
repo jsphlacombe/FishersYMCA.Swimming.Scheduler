@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SwimDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SwimDataEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Instructors" EntityType="SwimDataModel.Instructor" />
+    <EntitySet Name="MainLapPools" EntityType="SwimDataModel.MainLapPool" />
+    <EntitySet Name="PoolUsageTypes" EntityType="SwimDataModel.PoolUsageType" />
+    <EntitySet Name="Students" EntityType="SwimDataModel.Student" />
+  </EntityContainer>
+  <EntityType Name="Instructor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="MainLapPool">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Day" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Lane1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lane2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lane3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lane4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lane5" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lane6" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lane7" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TimeFrame" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="PoolUsageType">
+    <Key>
+      <PropertyRef Name="Usage" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Usage" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ParentFirstName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ParentLastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+  </EntityType>
+</Schema>

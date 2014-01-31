@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SwimDataModelStoreContainer" CdmEntityContainer="SwimDataEntities">
+    <EntitySetMapping Name="Instructors">
+      <EntityTypeMapping TypeName="SwimDataModel.Instructor">
+        <MappingFragment StoreEntitySet="Instructors">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainLapPools">
+      <EntityTypeMapping TypeName="SwimDataModel.MainLapPool">
+        <MappingFragment StoreEntitySet="MainLapPool">
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Lane1" ColumnName="Lane1" />
+          <ScalarProperty Name="Lane2" ColumnName="Lane2" />
+          <ScalarProperty Name="Lane3" ColumnName="Lane3" />
+          <ScalarProperty Name="Lane4" ColumnName="Lane4" />
+          <ScalarProperty Name="Lane5" ColumnName="Lane5" />
+          <ScalarProperty Name="Lane6" ColumnName="Lane6" />
+          <ScalarProperty Name="Lane7" ColumnName="Lane7" />
+          <ScalarProperty Name="TimeFrame" ColumnName="TimeFrame" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoolUsageTypes">
+      <EntityTypeMapping TypeName="SwimDataModel.PoolUsageType">
+        <MappingFragment StoreEntitySet="PoolUsageTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Usage" ColumnName="Usage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="SwimDataModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ParentFirstName" ColumnName="ParentFirstName" />
+          <ScalarProperty Name="ParentLastName" ColumnName="ParentLastName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Scheduler</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="./styles/ui-darkness/jquery-ui-1.8rc2.custom.css" />
+	<link rel="stylesheet" href="./styles/scheduler.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="./scripts/jquery-ui-1.8.24.min.js"></script>
+    <!--<script src="./scripts/jquery-ui-1.8rc2.custom.min.js"></script>-->
+	<script src="./scripts/scheduler.js"></script>
+
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>Scheduler</h1>
+		<p>Click "Add Entry" to get started. When you're done, click "Generate Schedule" to generate a random schedule.</p>
+	</div>
+	
+	<div id="messages">
+		<div class="message" id="info"></div>
+		<div class="message" id="error"></div>
+	</div>
+		
+	<div class="actions">
+		<div>
+			<a id="add-entry" class="add" href="#" title="Add entries to the schedule">+ Entry</a>
+			<a id="remove-entries" class="delete" href="#" title="Remove all entries from the schedule">- Entries</a>
+		</div>
+
+		<div>		
+			<a id="add-row" class="add" href="#" title="Add a new row to the schedule">+ Row</a>
+			<a id="remove-row" class="delete" href="#" title="Delete the last row in the schedule">- Row</a>
+		</div>
+	</div>
+	
+	<form id="add-entry-form" action="#" method="get">
+		<div id="add-entry-section" class="actions">
+			<input type="text" name="entry-name" id="entry-name" />
+			<a id="save" class="accept" href="#" title="Add entries to the schedule">Save</a>
+			<a id="cancel" class="cancel" href="#" title="Cancel adding">Cancel</a>
+			<ol>
+				<li>Enter a name.</li>
+				<li>Drag the mouse across the schedule to select the available times. Hold the <code>CTRL</code> key to select multiple times.</li>
+				<li>Click "Add."</li>
+			</ol>
+		</div>
+	</form>
+	
+	<table id="schedule">
+     
+		<thead>
+			<tr>
+				<th><input type="text" value="Day" /></th>
+                <th><input type="text" value="Time" /></th>
+				<th><input type="text" value="Lane 1" /></th>
+				<th><input type="text" value="Lane 2" /></th>
+				<th><input type="text" value="Lane 3" /></th>
+				<th><input type="text" value="Lane 4" /></th>
+				<th><input type="text" value="Lane 5" /></th>
+                <th><input type="text" value="Lane 6" /></th>
+                <th><input type="text" value="Lane 7" /></th>
+			</tr>
+		</thead>
+
+		<tbody>
+            <tr><th><input type="text" value="Monday"/></th>
+            </tr>
+            <tr>
+				<th><input type="text" value="5:00am - 5:30am"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+            <tr>
+				<th><input type="text" value="5:30am - 6:00am"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+            <tr>
+				<th><input type="text" value="6:00am - 6:30am"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th><input type="text" value="6:30am - 8:30am"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<th><input type="text" value="11:15am - 12:45pm"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th><input type="text" value="3:00pm - 5:00pm"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th><input type="text" value="5:00pm - 7:00pm"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th><input type="text" value="7:00pm - 9:00pm"/></th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+				<td></td>
+			</tr>
+
+		</tbody>
+	</table>
+	
+	<div class="actions">
+		<a id="generate" class="work" href="#" title="Generate a possible schedule">Generate Schedule</a>
+	</div>
+	
+	<div id="clone"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79544543-B267-4B33-810B-154A9B52A6B0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FishersYMCA.Swimming.Web</RootNamespace>
+    <AssemblyName>FishersYMCA.Swimming.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Grid.html" />
+    <Content Include="index.html" />
+    <Content Include="index-orig.html" />
+    <Content Include="resources\accent.png" />
+    <Content Include="resources\bg_aea.png" />
+    <Content Include="resources\bullet.png" />
+    <Content Include="resources\heroAccent.png" />
+    <Content Include="resources\orderedList0.png" />
+    <Content Include="resources\orderedList1.png" />
+    <Content Include="resources\orderedList2.png" />
+    <Content Include="resources\orderedList3.png" />
+    <Content Include="resources\orderedList4.png" />
+    <Content Include="resources\orderedList5.png" />
+    <Content Include="resources\orderedList6.png" />
+    <Content Include="resources\orderedList7.png" />
+    <Content Include="resources\orderedList8.png" />
+    <Content Include="resources\orderedList9.png" />
+    <Content Include="resources\overlay-button.png" />
+    <Content Include="resources\videos\IMG_0741-1.mov" />
+    <Content Include="resources\YMCAlogo.jpeg" />
+    <Content Include="resources\YMCAlogo.png" />
+    <Content Include="scripts\jquery-1.11.0.js" />
+    <Content Include="scripts\jquery-ui-1.10.4.custom.js" />
+    <Content Include="scripts\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="scripts\scheduler.js" />
+    <Content Include="scripts\swim-gen.js" />
+    <Content Include="styles\scheduler.css" />
+    <Content Include="styles\Site.css" />
+    <Content Include="styles\Temp.css" />
+    <Content Include="styles\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="styles\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="styles\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="styles\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="styles\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="styles\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="styles\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="styles\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="styles\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="styles\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="styles\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="styles\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="styles\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="styles\themes\base\jquery-ui.css" />
+    <Content Include="styles\themes\base\jquery.ui.accordion.css" />
+    <Content Include="styles\themes\base\jquery.ui.all.css" />
+    <Content Include="styles\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="styles\themes\base\jquery.ui.base.css" />
+    <Content Include="styles\themes\base\jquery.ui.button.css" />
+    <Content Include="styles\themes\base\jquery.ui.core.css" />
+    <Content Include="styles\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="styles\themes\base\jquery.ui.dialog.css" />
+    <Content Include="styles\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="styles\themes\base\jquery.ui.resizable.css" />
+    <Content Include="styles\themes\base\jquery.ui.selectable.css" />
+    <Content Include="styles\themes\base\jquery.ui.slider.css" />
+    <Content Include="styles\themes\base\jquery.ui.tabs.css" />
+    <Content Include="styles\themes\base\jquery.ui.theme.css" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="styles\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="styles\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="styles\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="styles\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="styles\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="styles\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="styles\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="styles\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="styles\themes\smoothness\images\animated-overlay.gif" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="styles\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="styles\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="styles\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="styles\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="styles\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="styles\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="styles\themes\smoothness\jquery-ui-1.10.4.custom.css" />
+    <Content Include="styles\themes\smoothness\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="styles\ui-darkness\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Content Include="styles\ui-darkness\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Content Include="styles\ui-darkness\images\ui-icons_222222_256x240.png" />
+    <Content Include="styles\ui-darkness\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="styles\ui-darkness\images\ui-icons_a83300_256x240.png" />
+    <Content Include="styles\ui-darkness\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="styles\ui-darkness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="styles\ui-darkness\jquery-ui-1.8rc2.custom.css" />
+    <Content Include="Temp.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49250</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/FishersYMCA.Swimming.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

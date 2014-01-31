@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Scheduler</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<!--<link rel="stylesheet" href="./styles/site.css" />-->
+	<link rel="stylesheet" href="./styles/scheduler.css" />
+  
+    <link rel="stylesheet" href="./styles/themes/smoothness/jquery-ui-1.10.4.custom.css">
+	<script src="./scripts/JQuery/jquery-1.11.0.js"></script>
+    <script src="./scripts/JQuery/jquery-ui-1.10.4.custom.js"></script>
+
+    
+	<!--<script src="./scripts/swim-gen.js"></script>  -->  
+	<script src="./scripts/scheduler.js"></script>
+
+</head>
+<body>
+     <div class="flexbox fragment">
+    <header>
+        <div id="flexboxSimple">
+            <img src="./resources/YMCAlogo.png" />
+            <hgroup>
+                <h1>Pool Lanes Scheduler</h1>
+                <h2>Fishers YMCA Aquatics</h2>
+            </hgroup>
+        </div>
+    </header>
+   </div>
+   <section aria-label="Main content" id="main-section">
+    <nav>
+        <div class="actions">
+            <div>
+                <a id="add-entry" class="add" href="#" title="Add entries to the schedule">+ Entry</a>
+                <a id="remove-entries" class="delete" href="#" title="Remove all entries from the schedule">- Entries</a>
+            </div>
+
+            <div>
+                <a id="add-row" class="add" href="#" title="Add a new row to the schedule">+ Row</a>
+                <a id="remove-row" class="delete" href="#" title="Delete the last row in the schedule">- Row</a>
+            </div>
+        </div>
+    </nav>
+         
+    
+<!--        <div>
+
+            <p>This is a sidebar</p>
+            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            <form>
+                <input type="text" required="required" />
+                <input type="submit" value="Save"/>
+
+            </form>
+            <!--<video src="resources/videos/IMG_0741-1.mp4" controls autoplay></video>-->
+        <!--</div>
+        </aside>-->
+       
+       
+            <div id="messages">
+                <div class="message" id="info"></div>
+                <div class="message" id="error"></div>
+            </div>
+            <form id="add-entry-form" action="#" method="get">
+                <div id="add-entry-section" class="actions">
+                    <input type="text" name="entry-name" id="entry-name" />
+                    <a id="save" class="accept" href="#" title="Add entries to the schedule">Save</a>
+                    <a id="cancel" class="cancel" href="#" title="Cancel adding">Cancel</a>
+                    <ol>
+                        <li>Enter a name.</li>
+                        <li>Drag the mouse across the schedule to select the available times. Hold the <code>CTRL</code> key to select multiple times.</li>
+                        <li>Click "Add."</li>
+                    </ol>
+                </div>
+            </form>
+
+
+           <div id="tabs">
+              <ul>
+                <li><a href="#tabs-1">Monday</a></li>
+                <li><a href="#tabs-2">Tuesday</a></li>
+                <li><a href="#tabs-3">Wednesday</a></li>
+                <li><a href="#tabs-4">Thursday</a></li>
+                <li><a href="#tabs-5">Friday</a></li>
+                <li><a href="#tabs-6">Saturday</a></li>
+              </ul>
+               <div id="tabs-1">
+                   <table id="schedule">
+                   </table>
+
+                   <div class="actions">
+                       <a id="generate" class="work" href="#" title="Generate a possible schedule">Generate Schedule</a>
+                       <a id="AddLaneAssignment" class="work" href="#" title="Add a pool lane assignment.">Add Pool Assignment</a>
+                   </div>
+               </div>
+              <div id="tabs-2">
+                  
+              
+              </div>
+              <div id="tabs-3">
+              </div>
+              <div id="tabs-4">
+              </div>
+              <div id="tabs-5">
+              </div>
+              <div id="tabs-6">
+              </div>
+            </div>
+    <!--    <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Monday</a></li>
+                <li><a href="#tabs-2">Tuesday</a></li>
+                <li><a href="#tabs-3">Wednesday</a></li>
+            </ul>
+            <div id="tabs-1">
+
+
+            </div>
+            <div id="tabs-2">
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+            </div>
+            <div id="tabs-3">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            </div>
+        </div>-->
+  
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
