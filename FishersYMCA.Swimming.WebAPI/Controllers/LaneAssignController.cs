@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using FishersYMCA.Swimming.WebAPI.Models;
-using FishersYMCA.Swimming.Domain;
+using FishersYMCA.Swimming.WebAPI.Models.Data;
 
 
 namespace FishersYMCA.Swimming.WebAPI.Controllers

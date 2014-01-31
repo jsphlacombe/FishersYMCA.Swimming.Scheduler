@@ -12,7 +12,8 @@ namespace FishersYMCA.Swimming.WebAPI.Models.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class LaneAssignmentDetail
+    using FishersYMCA.Swimming.Domain;
+    public partial class LaneAssignmentDetail : Entity
     {
         public int ID { get; set; }
         public string AssignmentType { get; set; }

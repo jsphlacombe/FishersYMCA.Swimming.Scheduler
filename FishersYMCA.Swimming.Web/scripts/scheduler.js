@@ -7,6 +7,7 @@ $(document).ready(function () {
 		$entry_section = $('#add-entry-section'),
 		$entry_name = $('#entry-name'),
 		$schedule = $('#schedule'),
+        $TuesSchedule = $('#TuesSchedule'),
 		$clone = $('#clone'),
 		$generate = $('#generate');
 	    $addLane = $('#AddLaneAssignment');
@@ -72,8 +73,9 @@ $(document).ready(function () {
 
      
 	    //Get Pool Lane Assignments
-		GetAllLaneAssignments();
+		GetAllLaneAssignments($schedule,"Monday");
 
+		GetAllLaneAssignments($TuesSchedule, "Tuesday");
 
 		//$("#tabs").tabs({
 		//    collapsible: true
@@ -182,9 +184,9 @@ $(document).ready(function () {
 	    });
 	}
 
-	function GetAllLaneAssignments() {
-
-	    $schedule.empty();
+	function GetAllLaneAssignments(element, day) {
+        
+	    element.empty();
 
         //Apply Table Column  Headers
 	    $('<thead><tr><th><input type="text" value="Time" /></th>' + 
@@ -195,11 +197,11 @@ $(document).ready(function () {
                     '<th><input type="text" value="Lane 5" /></th>' +
                     '<th><input type="text" value="Lane 6" /></th>' +
                     '<th><input type="text" value="Lane 7" /></th>' +
-                    '</tr></thead>').appendTo($schedule);
+                    '</tr></thead>').appendTo(element);
 
 	    $.ajax({
 	        type: "GET",
-	        url: "http://localhost/FishersYMCASwimmingService/Lanes/Schedule",
+	        url: "http://localhost/FishersYMCASwimmingService/Lanes/Schedule/Day/" + day,
 	        contentType: "json",
 	        dataType: "json",
 	        success: function (data) {
@@ -220,11 +222,6 @@ $(document).ready(function () {
 	                var lane6 = objData.Lane6;
 	                var lane7 = objData.Lane7;
 
-	                //var entry = '<span class="entry deletable">' + entryValue + '</span>';
-	                //$('<tr><td>' + id + '</td><td>' + fname +
-	                //                    '</td><td>' + lname + '</td></tr>').appendTo('#instructors');
-                   
-
 
 	                $('<tr><th>' + timeblock + '</th>' +
                     '<td><span class="entry deletable">' + lane1 + '</span></td>' + 
@@ -233,25 +230,7 @@ $(document).ready(function () {
                     '<td><span class="entry deletable">' + lane4 + '</span></td>' + 
                     '<td><span class="entry deletable">' + lane5 + '</span></td>' + 
                     '<td><span class="entry deletable">' + lane6 + '</span></td>' + 
-                    '<td><span class="entry deletable">' + lane7 + '</span></td></tr>').appendTo($schedule);
-
-
-	                //$('<tr><th>' + day + '</th><th>' + timeblock + '</th><td><span class="entry deletable">' + lane1 +
-                    //'</span></td><td><span class="entry deletable">' + lane2 +
-                    //'</span></td><td><span class="entry deletable">' + lane3 +
-                    //'</span></td><td><span class="entry deletable">' + lane4 +
-                    //'</span></td><td><span class="entry deletable">' + lane5 +
-                    //'</span></td><td><span class="entry deletable">' + lane6 +
-                    //'</span></td><td><span class="entry deletable">' + lane7 +
-                    //'</span></td></tr>').appendTo($schedule);
-	                // $('<tr><th>' + timeblock + '</th><td class="entry deletable">' + lane1 +
-	                //'</td><td class="entry deletable">' + lane2 +
-	                //'</td><td class="entry deletable">' + lane3 +
-	                //'</td><td class="entry deletable">' + lane4 +
-	                //'</td><td class="entry deletable">' + lane5 +
-	                //'</td><td class="entry deletable">' + lane6 +
-	                //'</td><td class="entry deletable">' + lane7 +
-	                //'</td></tr>').appendTo($schedule);
+                    '<td><span class="entry deletable">' + lane7 + '</span></td></tr>').appendTo(element);
 
 	            });
 	        },

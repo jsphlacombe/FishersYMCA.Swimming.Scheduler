@@ -200,6 +200,7 @@
       <DependentUpon>SwimModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\JoeModel.cs" />
     <Compile Include="WindsorDependencyResolver.cs" />
   </ItemGroup>
   <ItemGroup>

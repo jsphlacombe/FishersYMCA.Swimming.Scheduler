@@ -12,7 +12,8 @@ namespace FishersYMCA.Swimming.WebAPI.Models.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class PoolUsage
+    using FishersYMCA.Swimming.Domain;
+    public partial class PoolUsage : Entity
     {
         public int ID { get; set; }
         public string Time { get; set; }

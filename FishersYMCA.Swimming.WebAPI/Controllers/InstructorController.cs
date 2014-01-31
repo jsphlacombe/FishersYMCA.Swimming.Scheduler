@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using FishersYMCA.Swimming.WebAPI.Models;
-using FishersYMCA.Swimming.Domain;
+using FishersYMCA.Swimming.WebAPI.Models.Data;
 
 namespace FishersYMCA.Swimming.WebAPI.Controllers
 {
@@ -14,7 +14,7 @@ namespace FishersYMCA.Swimming.WebAPI.Controllers
         private readonly IRepository<Instructor> _instructorRepository;
  
         private readonly IUnitOfWork _unitOfWork;
-        public InstructorController(IRepository<Domain.Instructor> instructorRepository)
+        public InstructorController(IRepository<Instructor> instructorRepository)
         {       
             if (instructorRepository == null)
             {

@@ -12,7 +12,8 @@ namespace FishersYMCA.Swimming.WebAPI.Models.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Instructor
+    using FishersYMCA.Swimming.Domain;
+    public partial class Instructor : Entity
     {
         public int ID { get; set; }
         public string FirstName { get; set; }

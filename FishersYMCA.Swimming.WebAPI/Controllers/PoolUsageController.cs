@@ -6,7 +6,8 @@ using System.Net.Http;
 using System.Web.Http;
 
 using FishersYMCA.Swimming.WebAPI.Models;
-using FishersYMCA.Swimming.Domain;
+using FishersYMCA.Swimming.WebAPI.Models.Data;
+using FishersYMCA.Swimming.WebAPI.ViewModels;
 
 namespace FishersYMCA.Swimming.WebAPI.Controllers
 {
@@ -29,7 +30,7 @@ namespace FishersYMCA.Swimming.WebAPI.Controllers
           
         }
 
-        [Route("Lanes/Schedule/{id}")]
+        [Route("Lanes/Schedule/Id/{id}")]
         public PoolUsage GetLaneScheduleById(long Id)
         {
            // LaneAssignController _lane = new LaneAssignController(
@@ -41,6 +42,17 @@ namespace FishersYMCA.Swimming.WebAPI.Controllers
         {
             
             return _poolRepository.Query();
+        }
+
+        [Route("Lanes/Schedule/Day/{day}")]
+        public IQueryable<JoeModel> GetLaneScheduleByDay(string day)
+        {
+
+            return _poolRepository.Query().
+                Where(x=>x.Day == day)
+                .Select(x => new JoeModel{
+                    Name= x.Day
+                });
         }
 
         [Route("Schedule/Add"),HttpPost]

@@ -2,3 +2,4 @@ C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimmi
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Domain\bin\Debug\FishersYMCA.Swimming.Domain.pdb
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Domain\obj\Debug\FishersYMCA.Swimming.Domain.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Domain\obj\Debug\FishersYMCA.Swimming.Domain.pdb
+C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Domain\obj\Debug\FishersYMCA.Swimming.Domain.csprojResolveAssemblyReference.cache

@@ -39,13 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Instructor.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="LaneAssignmentDetail.cs" />
-    <Compile Include="PoolUsage.cs" />
-    <Compile Include="PoolUsageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

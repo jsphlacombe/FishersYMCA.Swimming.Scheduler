@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="685534f982894136b0f19e36ddc29ec6" Name="Diagram1">
-        <EntityTypeShape EntityType="SwimDataModel.Instructor" Width="1.5" PointX="6.0864886427700933" PointY="31.934184074371206" />
-        <EntityTypeShape EntityType="SwimDataModel.LaneAssignmentDetail" Width="1.5" PointX="10.272445756137579" PointY="21.098997930576559" />
-        <EntityTypeShape EntityType="SwimDataModel.PoolUsage" Width="1.5" PointX="1.0274970145092799" PointY="14.197995207364668" />
+      <Diagram DiagramId="685534f982894136b0f19e36ddc29ec6" Name="Diagram1" ZoomLevel="122">
+        <EntityTypeShape EntityType="SwimDataModel.Instructor" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwimDataModel.LaneAssignmentDetail" Width="1.5" PointX="3.5" PointY="0.75" />
+        <EntityTypeShape EntityType="SwimDataModel.PoolUsage" Width="1.5" PointX="0.5" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

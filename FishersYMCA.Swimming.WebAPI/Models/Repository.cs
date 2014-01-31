@@ -33,6 +33,7 @@ namespace FishersYMCA.Swimming.WebAPI.Models
         public IQueryable<TEntity> Query()
         {
             IQueryable<TEntity> query = DbSet;
+         
             return query;
         }
 

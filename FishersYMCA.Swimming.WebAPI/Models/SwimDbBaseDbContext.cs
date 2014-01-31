@@ -4,6 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
 using FishersYMCA.Swimming.Domain;
+using FishersYMCA.Swimming.WebAPI.Models.Data;
 
 namespace FishersYMCA.Swimming.WebAPI.Models
 {

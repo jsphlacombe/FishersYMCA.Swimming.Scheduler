@@ -2,7 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using FishersYMCA.Swimming.WebAPI.Models;
-using FishersYMCA.Swimming.Domain;
+using FishersYMCA.Swimming.WebAPI.Models.Data;
 
 namespace FishersYMCA.Swimming.WebAPI.DIInstallers
 {
@@ -13,7 +13,7 @@ namespace FishersYMCA.Swimming.WebAPI.DIInstallers
             container.Register(
                 Component.For<IContextFactory>().ImplementedBy<ContextFactory>().LifestylePerWebRequest());
             container.Register(
-                Component.For<IRepository<Domain.Instructor>>().ImplementedBy<Repository<Domain.Instructor>>().LifestylePerWebRequest());
+                Component.For<IRepository<Instructor>>().ImplementedBy<Repository<Instructor>>().LifestylePerWebRequest());
             container.Register(
                 Component.For<IRepository<PoolUsage>>().ImplementedBy<Repository<PoolUsage>>().LifestylePerWebRequest());
             container.Register(

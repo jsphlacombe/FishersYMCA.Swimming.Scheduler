@@ -337,10 +337,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FishersYMCA.Swimming.Data\FishersYMCA.Swimming.Data.csproj">
-      <Project>{3b03bf70-e84a-4ab9-b6bb-a05b4871e6e4}</Project>
-      <Name>FishersYMCA.Swimming.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FishersYMCA.Swimming.Domain\FishersYMCA.Swimming.Domain.csproj">
       <Project>{b58556a4-b51a-4f7b-a16f-158b770dd282}</Project>
       <Name>FishersYMCA.Swimming.Domain</Name>

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishersYMCA.Swimming.Scheduler", "FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler.csproj", "{E04B9F03-4D33-478D-91D4-533324AF54C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishersYMCA.Swimming.Data", "FishersYMCA.Swimming.Data\FishersYMCA.Swimming.Data.csproj", "{3B03BF70-E84A-4AB9-B6BB-A05B4871E6E4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishersYMCA.Swimming.Domain", "FishersYMCA.Swimming.Domain\FishersYMCA.Swimming.Domain.csproj", "{B58556A4-B51A-4F7B-A16F-158B770DD282}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishersYMCA.Swimming.WebAPI", "FishersYMCA.Swimming.WebAPI\FishersYMCA.Swimming.WebAPI.csproj", "{C1F12CE5-A715-422C-8BCF-18D1CCE3DB17}"
@@ -21,10 +19,6 @@ Global
 		{E04B9F03-4D33-478D-91D4-533324AF54C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E04B9F03-4D33-478D-91D4-533324AF54C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E04B9F03-4D33-478D-91D4-533324AF54C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B03BF70-E84A-4AB9-B6BB-A05B4871E6E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B03BF70-E84A-4AB9-B6BB-A05B4871E6E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B03BF70-E84A-4AB9-B6BB-A05B4871E6E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B03BF70-E84A-4AB9-B6BB-A05B4871E6E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B58556A4-B51A-4F7B-A16F-158B770DD282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B58556A4-B51A-4F7B-A16F-158B770DD282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B58556A4-B51A-4F7B-A16F-158B770DD282}.Release|Any CPU.ActiveCfg = Release|Any CPU
