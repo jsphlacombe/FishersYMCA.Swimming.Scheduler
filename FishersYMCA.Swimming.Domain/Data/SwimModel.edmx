@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SwimDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SwimDataModelStoreContainer">
+          <EntitySet Name="Instructors" EntityType="SwimDataModel.Store.Instructors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LaneAssignment" EntityType="SwimDataModel.Store.LaneAssignment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PoolUsage" EntityType="SwimDataModel.Store.PoolUsage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="SwimDataModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_LaneAssignment_PoolUsage" Association="SwimDataModel.Store.FK_LaneAssignment_PoolUsage">
+            <End Role="PoolUsage" EntitySet="PoolUsage" />
+            <End Role="LaneAssignment" EntitySet="LaneAssignment" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Instructors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nchar" MaxLength="10" />
+          <Property Name="LastName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="LaneAssignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Lane" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="SlotID" Type="int" Nullable="false" />
+          <Property Name="InstructorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="InstructorPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssignmentDetails" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PoolUsage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Day" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_LaneAssignment_PoolUsage">
+          <End Role="PoolUsage" Type="SwimDataModel.Store.PoolUsage" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LaneAssignment" Type="SwimDataModel.Store.LaneAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PoolUsage">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LaneAssignment">
+              <PropertyRef Name="SlotID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SwimDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SwimDataEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Instructors" EntityType="SwimDataModel.Instructor" />
+          <EntitySet Name="LaneAssignments" EntityType="SwimDataModel.LaneAssignment" />
+          <EntitySet Name="PoolUsages" EntityType="SwimDataModel.PoolUsage" />
+          <EntitySet Name="sysdiagrams" EntityType="SwimDataModel.sysdiagram" />
+          <AssociationSet Name="FK_LaneAssignment_PoolUsage" Association="SwimDataModel.FK_LaneAssignment_PoolUsage">
+            <End Role="PoolUsage" EntitySet="PoolUsages" />
+            <End Role="LaneAssignment" EntitySet="LaneAssignments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Instructor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="LastName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="LaneAssignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Lane" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SlotID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PoolUsage" Relationship="SwimDataModel.FK_LaneAssignment_PoolUsage" FromRole="LaneAssignment" ToRole="PoolUsage" />
+          <Property Type="String" Name="InstructorName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstructorPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AssignmentDetails" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PoolUsage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Day" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LaneAssignments" Relationship="SwimDataModel.FK_LaneAssignment_PoolUsage" FromRole="PoolUsage" ToRole="LaneAssignment" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_LaneAssignment_PoolUsage">
+          <End Role="PoolUsage" Type="SwimDataModel.PoolUsage" Multiplicity="1" />
+          <End Role="LaneAssignment" Type="SwimDataModel.LaneAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PoolUsage">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LaneAssignment">
+              <PropertyRef Name="SlotID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SwimDataModelStoreContainer" CdmEntityContainer="SwimDataEntities">
+          <EntitySetMapping Name="Instructors">
+            <EntityTypeMapping TypeName="SwimDataModel.Instructor">
+              <MappingFragment StoreEntitySet="Instructors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LaneAssignments">
+            <EntityTypeMapping TypeName="SwimDataModel.LaneAssignment">
+              <MappingFragment StoreEntitySet="LaneAssignment">
+                <ScalarProperty Name="AssignmentDetails" ColumnName="AssignmentDetails" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentPhone" ColumnName="StudentPhone" />
+                <ScalarProperty Name="InstructorPhone" ColumnName="InstructorPhone" />
+                <ScalarProperty Name="InstructorName" ColumnName="InstructorName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Lane" ColumnName="Lane" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SlotID" ColumnName="SlotID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PoolUsages">
+            <EntityTypeMapping TypeName="SwimDataModel.PoolUsage">
+              <MappingFragment StoreEntitySet="PoolUsage">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SwimDataModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

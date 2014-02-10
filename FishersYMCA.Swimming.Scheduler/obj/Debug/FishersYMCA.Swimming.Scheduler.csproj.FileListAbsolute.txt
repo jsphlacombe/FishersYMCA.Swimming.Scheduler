@@ -9,7 +9,6 @@ C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimmi
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\EntityFramework.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\EntityFramework.SqlServer.dll
-C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\FishersYMCA.Swimming.Data.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\FishersYMCA.Swimming.Domain.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\Microsoft.Data.Edm.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\Microsoft.Data.OData.dll
@@ -32,7 +31,6 @@ C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimmi
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\WebGrease.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\WebMatrix.Data.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\WebMatrix.WebData.dll
-C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\FishersYMCA.Swimming.Data.pdb
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\FishersYMCA.Swimming.Domain.pdb
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\EntityFramework.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Scheduler\bin\EntityFramework.SqlServer.xml

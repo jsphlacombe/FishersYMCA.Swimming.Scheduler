@@ -1,5 +1,11 @@
-﻿namespace FishersYMCA.Swimming.WebAPI.Models
+﻿
+
+using FishersYMCA.Swimming.Domain;
+
+namespace FishersYMCA.Swimming.WebAPI.Models
 {
+    
+ 
     public interface IContextFactory
     {
         IBaseDbContext Get();
@@ -13,6 +19,7 @@
 
         public IBaseDbContext Get()
         {
+            
             return _baseDbContext ?? (_baseDbContext = new SwimDbBaseDbContext());
         }
 

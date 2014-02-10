@@ -1,4 +1,8 @@
-﻿namespace FishersYMCA.Swimming.WebAPI.Models
+﻿
+
+using FishersYMCA.Swimming.Domain;
+
+namespace FishersYMCA.Swimming.WebAPI.Models
 {
     public interface IUnitOfWork
     {

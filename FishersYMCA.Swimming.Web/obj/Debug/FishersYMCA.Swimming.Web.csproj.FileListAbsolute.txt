@@ -2,4 +2,3 @@ C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimmi
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Web\bin\FishersYMCA.Swimming.Web.pdb
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Web\obj\Debug\FishersYMCA.Swimming.Web.dll
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Web\obj\Debug\FishersYMCA.Swimming.Web.pdb
-C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.Web\obj\Debug\FishersYMCA.Swimming.Web.csprojResolveAssemblyReference.cache

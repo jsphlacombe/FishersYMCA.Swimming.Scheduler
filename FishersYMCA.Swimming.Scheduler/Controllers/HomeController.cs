@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FishersYMCA.Swimming.Data;
+//using FishersYMCA.Swimming.Data;
 
 namespace FishersYMCA.Swimming.Scheduler.Controllers
 {

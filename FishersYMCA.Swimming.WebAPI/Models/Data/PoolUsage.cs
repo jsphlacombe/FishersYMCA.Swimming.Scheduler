@@ -15,15 +15,15 @@ namespace FishersYMCA.Swimming.WebAPI.Models.Data
     using FishersYMCA.Swimming.Domain;
     public partial class PoolUsage : Entity
     {
+        public PoolUsage()
+        {
+            this.LaneAssignments = new HashSet<LaneAssignment>();
+        }
+    
         public int ID { get; set; }
         public string Time { get; set; }
-        public Nullable<int> Lane1 { get; set; }
-        public Nullable<int> Lane2 { get; set; }
-        public Nullable<int> Lane3 { get; set; }
-        public Nullable<int> Lane4 { get; set; }
-        public Nullable<int> Lane5 { get; set; }
-        public Nullable<int> Lane6 { get; set; }
-        public Nullable<int> Lane7 { get; set; }
         public string Day { get; set; }
+    
+        public virtual ICollection<LaneAssignment> LaneAssignments { get; set; }
     }
 }

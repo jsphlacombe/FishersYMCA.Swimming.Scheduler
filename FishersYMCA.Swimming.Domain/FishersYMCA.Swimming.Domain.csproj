@@ -30,8 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +49,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Instructor.cs">
+      <DependentUpon>SwimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LaneAssignment.cs">
+      <DependentUpon>SwimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PoolUsage.cs">
+      <DependentUpon>SwimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SwimModel.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SwimModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SwimModel.cs" />
+    <Compile Include="Data\SwimModel.Designer.cs">
+      <DependentUpon>SwimModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SwimModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SwimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SwimModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SwimModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagram.cs">
+      <DependentUpon>SwimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DebugTextWriter.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IBaseDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwimDbBaseDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Data\SwimModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SwimModel.Context1.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Data\SwimModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SwimModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\SwimModel.edmx.diagram">
+      <DependentUpon>SwimModel.edmx</DependentUpon>
+    </None>
+    <None Include="Data\SwimModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SwimModel1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

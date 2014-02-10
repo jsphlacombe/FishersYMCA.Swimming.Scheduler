@@ -26,7 +26,6 @@ namespace FishersYMCA.Swimming.WebAPI
             //AreaRegistration.RegisterAllAreas();
             ConfigureWindsor(GlobalConfiguration.Configuration);
             GlobalConfiguration.Configure(c => WebApiConfig.Register(c, _container));
-
             //WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

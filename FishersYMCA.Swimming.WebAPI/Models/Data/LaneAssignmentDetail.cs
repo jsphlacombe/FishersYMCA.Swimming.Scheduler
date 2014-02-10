@@ -16,8 +16,13 @@ namespace FishersYMCA.Swimming.WebAPI.Models.Data
     public partial class LaneAssignmentDetail : Entity
     {
         public int ID { get; set; }
-        public string AssignmentType { get; set; }
         public string InstructorName { get; set; }
+        public string InstructorPhone { get; set; }
         public string StudentName { get; set; }
+        public string StudentPhone { get; set; }
+        public int LaneID { get; set; }
+        public string Description { get; set; }
+    
+        public virtual LaneAssignment LaneAssignment { get; set; }
     }
 }

@@ -25,7 +25,9 @@ namespace FishersYMCA.Swimming.WebAPI.Models.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<LaneAssignment> LaneAssignments { get; set; }
         public DbSet<LaneAssignmentDetail> LaneAssignmentDetails { get; set; }
         public DbSet<PoolUsage> PoolUsages { get; set; }
     }

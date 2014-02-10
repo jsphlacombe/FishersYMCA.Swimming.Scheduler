@@ -4,29 +4,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+   
+    @Styles.Render("~/Content/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+
 </head>
 <body>
-    <header>
-        <div class="content-wrapper">
+    <nav class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            @*  <a class="brand" href="/">Pool Lanes Scheduler</a>*@
+            <div class="row-fluid">
+                <div class="media">
+                    <a class="pull-left" href="http://www.indymca.org/centers/fishers/center-news/">
+                        <img class="media-object" src="~/resources/YMCAlogo.png" />
+                    </a>
+                    <div class="media-body">
+                        <a class="brand" href="/">Fishers YMCA Aquatics Pool Scheduler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+  @*        <div class="content-wrapper">
             <div class="float-left">
-                <p class="site-title">
-                    <a href="~/">ASP.NET Web API</a></p>
+                
+                <h1>Pool Lanes Scheduler</h1>
+                <h2>Fishers YMCA Aquatics</h2>
             </div>
             <div class="float-right">
                 <nav>
-                    <ul id="menu">
+                  <ul id="menu">
                         <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                     </ul>
                 </nav>
             </div>
-        </div>
-    </header>
+        </div>*@
+
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/custom")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
