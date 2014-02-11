@@ -20,25 +20,25 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
-                            <span class="label label-info">Monday Schedule</span>
+                           @* <span class="label label-info">Monday Schedule</span>*@
                             <table id="schedule" class="table table-striped table-bordered table-condensed">
                             </table>
 
                             <div class="actions">
-                                <a id="generate" class="work" href="#" title="Generate a possible schedule">Generate Schedule</a>
+                               @* <a id="generate" class="work" href="#" title="Generate a possible schedule">Generate Schedule</a>*@
                                 <a id="AddLaneAssignment" class="work" href="#" title="Add a pool lane assignment.">Add Pool Assignment</a>
-                                <a href="#themodal" role="button" class="btn btn-primary" data-toggle="modal">Launch a modal dialog</a>
+                                @*<a href="#themodal" role="button" class="btn btn-primary" data-toggle="modal">Launch a modal dialog</a>*@
 
 
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2">
-                           <span class="label label-info">Tuesday Schedule</span>
+                          @* <span class="label label-info">Tuesday Schedule</span>*@
                             <table id="TuesSchedule" class="table table-striped table-bordered">
                             </table>
                         </div>
                         <div class="tab-pane" id="tab3">
-                            <span class="label label-info">Wednesday Schedule</span>
+                           @* <span class="label label-info">Wednesday Schedule</span>*@
                             <table id="WedSchedule" class="table table-striped table-bordered">
                             </table>
                         </div>
@@ -51,15 +51,15 @@
                     </div>
                 </div>
 
-
-                <div id="themodal" class="modal hide fade">
+                   </div>
+                @* <div id="themodal" class="modal hide fade">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h3>Modal header</h3>
                     </div>
                     <div class="modal-body">
 
-                        <div class="actions">
+                       <div class="actions">
                             <div>
                                 <span class="badge">Enter Appointment</span>
                                 <a id="add-entry" class="add" href="#" title="Add entries to the schedule">+ Entry</a>
@@ -95,16 +95,42 @@
                         <a id="yesbutton" href="#" class="btn btn-primary" data-loading-text="Doing it...">Yes! Do it now!</a>
                     </div>
                 </div>
-            </div>
+            </div>*@
             <div class="span4">
                 <section class="navspy nav-stacked affix">
-                    <div id="LaneDetails">Lane Details
+                    <div id="LaneDetails" class="alert alert-success">...</div>
+                    <div class="actions">
+                        <div>
+                            <span class="badge">Enter Appointment</span>
+                            <a id="add-entry" class="add" href="#" title="Add entries to the schedule">+ Entry</a>
+                            <a id="remove-entries" class="delete" href="#" title="Remove all entries from the schedule">- Entries</a>
+                        </div>
 
-
+                        <div>
+                            <a id="add-row" class="add" href="#" title="Add a new row to the schedule">+ Row</a>
+                            <a id="remove-row" class="delete" href="#" title="Delete the last row in the schedule">- Row</a>
+                        </div>
                     </div>
+
+                    <div id="messages">
+                        <div class="message" id="info"></div>
+                        <div class="message" id="error"></div>
+                    </div>
+                    <form id="add-entry-form" action="#" method="get">
+                        <div id="add-entry-section" class="actions">
+                            <input type="text" name="entry-name" id="entry-name" />
+                            <a id="save" class="accept" href="#" title="Add entries to the schedule">Save</a>
+                            <a id="cancel" class="cancel" href="#" title="Cancel adding">Cancel</a>
+                            <ol>
+                                <li>Enter a name.</li>
+                                <li>Drag the mouse across the schedule to select the available times. Hold the <code>CTRL</code> key to select multiple times.</li>
+                                <li>Click "Add."</li>
+                            </ol>
+                        </div>
+                    </form>
                 </section>
             </div>
-             </div>
+          
                   @* <div id="tabs">
               <ul class="nav nav-tabs">
                 <li><a href="#tabs-1">Monday</a></li>

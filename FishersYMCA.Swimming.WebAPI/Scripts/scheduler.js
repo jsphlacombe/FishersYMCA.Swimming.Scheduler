@@ -59,7 +59,7 @@ $(document).ready(function () {
 		$('#generate').click(generateSchedule);
 		
 		// Whenever entries are created, let them be deletable
-		$(document).on('click', '.deletable', GetLaneDetail);
+		$(document).on('click', '.LaneAssign', GetLaneDetail);
 		
 		// Prevent text selection on double-click
 		$('.actions a')
@@ -80,18 +80,7 @@ $(document).ready(function () {
 
 		GetAllLaneAssignments($WedSchedule, "Wednesday");
 
-		//$("#tabs").tabs({
-		//    collapsible: true
-		//});
 
-		//$(function () {
-		//    $("#tabs").tabs();
-		//});
-
-		//$(function () {
-		//    $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
-		//    $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
-		//});
 
 	}
 
@@ -212,9 +201,10 @@ $(document).ready(function () {
 	            $.each(data, function (key, value) {
 	                //stringify
 	                var jsonData = JSON.stringify(value);
+	       
 	                //Parse JSON
 	                var objData = $.parseJSON(jsonData);
-
+	                
 
 	                var Lane1Obj = objData.Lane1;
 	                var Lane2Obj = objData.Lane2;
@@ -248,6 +238,8 @@ $(document).ready(function () {
                     //'<td><span class="entry deletable">' + day + '</span></td>' +
                     //'<td><span class="entry deletable">' + lane + '</span></td>' +
                     //'</tr>').appendTo(element);
+	               
+                   
 
 	               
 	            });
@@ -258,7 +250,7 @@ $(document).ready(function () {
 	    });
 
 	}
-
+    
 	function GetLaneDetail() {
 
 	   // alert($(this).data("id"));
@@ -268,15 +260,17 @@ $(document).ready(function () {
 	        contentType: "json",
 	        dataType: "json",
 	        success: function (data) {
-	            //stringify
-	            var jsonData = JSON.stringify(data);
+	            $.each(data, function (key, value) {
+	                //stringify
+	                var jsonData = JSON.stringify(value);
 
-	            //alert(jsonData);
+	           // alert(jsonData);
 	            //Parse JSON
 	            var objData = $.parseJSON(jsonData);
+	            var objData = $.parseJSON(jsonData);
 
-	            alert(objData.ID);
-	            var id = objData.ID;
+	           // alert(objData.InstructorName);
+	           // var id = objData.ID;
 	            var InstName = objData.InstructorName;
 	            var StudName = objData.StudentName;
 	            var InstPhone = objData.InstructorPhone;
@@ -285,8 +279,9 @@ $(document).ready(function () {
 
 	            //$('<tr><td>' + id + '</td><td>' + fname +
 	            //            '</td><td>' + lname + '</td></tr>').appendTo('#instructors');
-	            alert(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + AssignDetails);
-	            $('#LaneDetails').text = InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + AssignDetails; 
+	            //alert(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + AssignDetails);
+	            $('#LaneDetails').text(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + AssignDetails); 
+	            });
 	        },
 	        error: function (xhr) {
 	            alert(xhr.responseText);

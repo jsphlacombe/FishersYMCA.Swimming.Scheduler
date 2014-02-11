@@ -101,7 +101,7 @@ thead th,tbody td { width:50px; min-width:120px; }*/
 #schedule .deletable {
 	cursor:pointer;
 	border-color:#aea;
-	background-color:#dfd; color:#070;	
+	background-color:#dfd; color:#070;
 }
 
 #schedule .deleting,
