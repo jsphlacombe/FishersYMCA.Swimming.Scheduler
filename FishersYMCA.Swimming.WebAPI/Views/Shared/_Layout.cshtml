@@ -45,10 +45,13 @@
 
     @RenderBody()
 
+    @Scripts.Render("~/bundles/require")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/custom")
+   
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+
     @RenderSection("scripts", required: false)
 
 </body>

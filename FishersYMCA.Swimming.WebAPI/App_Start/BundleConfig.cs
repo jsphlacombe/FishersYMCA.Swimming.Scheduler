@@ -33,12 +33,15 @@ namespace FishersYMCA.Swimming.WebAPI
             "~/Content/Bootstrap/css/bootstrap.css",
             "~/Content/Bootstrap/css/bootstrap-responsive.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-            "~/Scripts/scheduler.js"));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+            "~/Scripts/app/swim-gen.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
             "~/Scripts/bootstrap/bootstrap.js",
             "~/Scripts/bootstrap/bootstrap.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/require").Include(
+            "~/Scripts/require.js"));
         }
     }
 }
