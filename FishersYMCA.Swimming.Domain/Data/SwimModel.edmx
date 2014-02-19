@@ -35,7 +35,7 @@
           <Property Name="InstructorPhone" Type="nvarchar" MaxLength="50" />
           <Property Name="StudentPhone" Type="nvarchar" MaxLength="50" />
           <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
-          <Property Name="AssignmentDetails" Type="nvarchar" MaxLength="100" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="PoolUsage">
           <Key>
@@ -104,7 +104,7 @@
           <Property Type="String" Name="InstructorPhone" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="StudentPhone" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="StudentName" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="AssignmentDetails" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Category" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PoolUsage">
           <Key>
@@ -155,7 +155,7 @@
           <EntitySetMapping Name="LaneAssignments">
             <EntityTypeMapping TypeName="SwimDataModel.LaneAssignment">
               <MappingFragment StoreEntitySet="LaneAssignment">
-                <ScalarProperty Name="AssignmentDetails" ColumnName="AssignmentDetails" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="StudentName" ColumnName="StudentName" />
                 <ScalarProperty Name="StudentPhone" ColumnName="StudentPhone" />
                 <ScalarProperty Name="InstructorPhone" ColumnName="InstructorPhone" />

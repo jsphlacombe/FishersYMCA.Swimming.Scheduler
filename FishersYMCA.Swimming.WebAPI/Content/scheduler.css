@@ -91,14 +91,60 @@ thead th,tbody td { width:50px; min-width:120px; }*/
 
 /* ENTRIES */
 
-#schedule .entry {
+.entry-Lap {
 	display:block; float:left;
 	margin:5px; padding:5px;
 	border:1px solid #aaa;
-	background-color:#eee; color:#333;
+    width:inherit;
+	/*background-color:#700; color:#700;*/
+    cursor:pointer;
+	border-color:#070;
+	background-color:#aea; color:#070;
 }
 
-#schedule .deletable {
+.entry-Private  {
+	display:block; float:left;
+	margin:5px; padding:5px;
+	border:1px solid #aaa;
+    width:inherit;
+	    cursor:pointer;
+	border-color:#000677;
+	background-color:#aad3ee; color:#000677;
+}
+
+.entry-Youth {
+	display:block; float:left;
+	margin:5px; padding:5px;
+	border:1px solid #aaa;
+    width:inherit;
+	    cursor:pointer;
+	border-color:#000677;
+	background-color:#aad3ee; color:#000677;
+    	border-color:#700;
+	background-color:#eaa; color:#700;
+}
+
+.entry-Open {
+	display:block; float:left;
+	margin:5px; padding:5px;
+	border:1px solid #aaa;
+    width:inherit;
+	    cursor:pointer;
+	border-color:#ff6a00;
+	background-color:#fcb786; color:#a05017;
+}
+
+.entry-undefined{
+	display:block; float:left;
+	margin:5px; padding:5px;
+	border:1px solid #aaa;
+    width:inherit;
+	    cursor:pointer;
+	border-color:#333;
+	background-color:#aaa; color:#333;
+}
+
+.deletable {
 	cursor:pointer;
 	border-color:#aea;
 	background-color:#dfd; color:#070;

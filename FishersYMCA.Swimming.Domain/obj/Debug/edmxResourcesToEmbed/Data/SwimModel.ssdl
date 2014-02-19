@@ -30,7 +30,7 @@
     <Property Name="InstructorPhone" Type="nvarchar" MaxLength="50" />
     <Property Name="StudentPhone" Type="nvarchar" MaxLength="50" />
     <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
-    <Property Name="AssignmentDetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="Category" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PoolUsage">
     <Key>

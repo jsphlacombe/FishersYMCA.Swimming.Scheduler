@@ -23,7 +23,7 @@ namespace FishersYMCA.Swimming.Domain.Data
         public string InstructorPhone { get; set; }
         public string StudentPhone { get; set; }
         public string StudentName { get; set; }
-        public string AssignmentDetails { get; set; }
+        public string Category { get; set; }
     
         public virtual PoolUsage PoolUsage { get; set; }
     }

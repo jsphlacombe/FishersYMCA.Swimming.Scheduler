@@ -1,15 +1,14 @@
-//define(['jquery'], function ($) {
     define(function () {
-    //var FishersYMCA = function () {
+
         // Initialize some jQuery objects
     var
         $error = $('#error'),
         $info = $('#info'),
         $entry_section = $('#add-entry-section'),
         $entry_name = $('#entry-name'),
-        $schedule = $('#schedule'),
-        $TuesSchedule = $('#TuesSchedule'),
-        $WedSchedule = $('#WedSchedule'),
+        //$schedule = $('#schedule'),
+        ////$TuesSchedule = $('#TuesSchedule'),
+        //$WedSchedule = $('#WedSchedule'),
         $clone = $('#clone'),
         $generate = $('#generate'),
         $addLane = $('#AddLaneAssignment');
@@ -33,7 +32,64 @@
         };
         // =====================================================
 
+        function init() {
+            // Hide Stuff
+            $entry_section.hide();
+            $error.hide();
+            $info.hide();
+
+            // Activate buttons
+            $('#add-entry').click(openEntrySection);
+            $('#save').click(addEntries);
+            $('#cancel').click(closeEntrySection);
+            $('#add-entry-form').submit(addEntries);
+            $('#add-row')
+                .click(addRow)
+                .hover(addRowHighlight, addRowUndoHighlight);
+            $('#remove-row')
+                .click(removeRow)
+                .hover(removeRowHighlight, removeRowUndoHighlight);
+            $('#remove-entries')
+                .click(removeEntries)
+                .hover(removeEntriesHighlight, removeEntriesUndoHighlight);
+            $('#generate').click(generateSchedule);
+
+            // Whenever entries are created, let them be selectable
+            $(document).on('click', '.LaneAssign', GetLaneDetail);
+
+            // Prevent text selection on double-click
+            $('.actions a')
+                .attr('unselectable', 'on')
+                .css('MozUserSelect', 'none')
+                .bind('selectstart.ui', function () {
+                    return false;
+                });
+
+            //Add custom code for creating value in database.
+            $addLane.click(AddLaneAssignment);
+
+        }
        
+        //function object for the day's schedule
+        var DaySchedule = function (day) {
+            var table = $('<table id="' + day + 'Schedule"></table>');
+
+            table.addClass('table table-striped table-bordered table-condensed');
+
+            $('#tab' + day).append(table);
+
+            GetAllLaneAssignments(table, day);
+
+            this.name = function (val) {
+                if (val && name !== val) {
+                    name = table.id;
+                }
+
+                return name;
+            };
+        };
+
+
 
         function GetInstructorById() {
 
@@ -130,10 +186,10 @@
 
         function GetAllLaneAssignments(element, day) {
 
-            element.empty();
+             //element.empty();
 
             //Apply Table Column  Headers
-            $('<thead><tr><th>Time</th>' +
+            element.append($('<thead><tr><th>Time</th>' +
                 '<th>Lane 1</th>' +
                 '<th>Lane 2</th>' +
                 '<th>Lane 3</th>' +
@@ -141,7 +197,7 @@
                 '<th>Lane 5</th>' +
                 '<th>Lane 6</th>' +
                 '<th>Lane 7</th>' +
-                '</tr></thead>').appendTo(element);
+                '</tr></thead>'));
 
 
             $.ajax({
@@ -180,22 +236,14 @@
 
                         // alert(Lane1Obj.ID + "," + Lane2Obj.ID + "," + Lane3Obj.ID);
 
-                        $('<tr><th>' + timeblock + '</th>' +
-                        '<td><span class="entry deletable LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
-                        '<td><span class="entry deletable LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
-                        '<td><span class="entry deletable LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
-                        '<td><span class="entry deletable">' + lane4 + '</span></td>' +
-                        '<td><span class="entry deletable">' + lane5 + '</span></td>' +
-                        '<td><span class="entry deletable">' + lane6 + '</span></td>' +
-                        '<td><span class="entry deletable">' + lane7 + '</span></td></tr>').appendTo(element);
-
-                        //$('<tr><td>' + timeblock + '</td>' +
-                        //'<td><span class="entry deletable">' + day + '</span></td>' +
-                        //'<td><span class="entry deletable">' + lane + '</span></td>' +
-                        //'</tr>').appendTo(element);
-
-
-
+                        element.append($('<tr><th>' + timeblock + '</th>' +
+                          '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
+                          '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
+                          '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
+                          '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
+                          '<td><span class="entry-' + "undefined" + ' ">' + lane5 + '</span></td>' +
+                          '<td><span class="entry-' + "undefined" + ' ">' + lane6 + '</span></td>' +
+                          '<td><span class="entry-' + "undefined" + ' ">' + lane7 + '</span></td></tr>'));
 
                     });
                 },
@@ -208,6 +256,7 @@
 
         function GetLaneDetail() {
 
+       
             // alert($(this).data("id"));
             $.ajax({
                 type: "GET",
@@ -230,12 +279,12 @@
                         var StudName = objData.StudentName;
                         var InstPhone = objData.InstructorPhone;
                         var StudPhone = objData.StudentPhone;
-                        var AssignDetails = objData.AssignmentDetails;
+                        var Category = objData.Category;
 
                         //$('<tr><td>' + id + '</td><td>' + fname +
                         //            '</td><td>' + lname + '</td></tr>').appendTo('#instructors');
                         //alert(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + AssignDetails);
-                        $('#LaneDetails').text(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + AssignDetails);
+                        $('#LaneDetails').text(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + Category);
                     });
                 },
                 error: function (xhr) {
@@ -402,59 +451,27 @@
             return false;
         }
 
+        var Book = function (name, price) {
+            var priceChangingCallbacks = [];
+            priceChangedCallbacks = [];
 
+            this.name = function (val) {
+                if (val && name !== val) {
+                    name = val;
+                }
+
+                return name;
+            };
+        };
         //};
 
+       
         // FishersYMCA.init();
         //
         return {
-            init: function init() {
-                // Hide Stuff
-                $entry_section.hide();
-                $error.hide();
-                $info.hide();
-
-                // Activate buttons
-                $('#add-entry').click(openEntrySection);
-                $('#save').click(addEntries);
-                $('#cancel').click(closeEntrySection);
-                $('#add-entry-form').submit(addEntries);
-                $('#add-row')
-                    .click(addRow)
-                    .hover(addRowHighlight, addRowUndoHighlight);
-                $('#remove-row')
-                    .click(removeRow)
-                    .hover(removeRowHighlight, removeRowUndoHighlight);
-                $('#remove-entries')
-                    .click(removeEntries)
-                    .hover(removeEntriesHighlight, removeEntriesUndoHighlight);
-                $('#generate').click(generateSchedule);
-
-                // Whenever entries are created, let them be deletable
-                $(document).on('click', '.LaneAssign', GetLaneDetail);
-
-                // Prevent text selection on double-click
-                $('.actions a')
-                    .attr('unselectable', 'on')
-                    .css('MozUserSelect', 'none')
-                    .bind('selectstart.ui', function () {
-                        return false;
-                    });
-
-                //Add custom code for creating value in database.
-                $addLane.click(AddLaneAssignment);
-
-
-                //Get Pool Lane Assignments
-                GetAllLaneAssignments($schedule, "Monday");
-
-                GetAllLaneAssignments($TuesSchedule, "Tuesday");
-
-                GetAllLaneAssignments($WedSchedule, "Wednesday");
-
-
-
-            }
+            init: init,
+            book: Book,
+            DaySchedule: DaySchedule
         };
    // }();
 

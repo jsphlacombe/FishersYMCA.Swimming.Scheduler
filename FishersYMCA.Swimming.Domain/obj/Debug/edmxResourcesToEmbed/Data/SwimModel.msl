@@ -13,7 +13,7 @@
     <EntitySetMapping Name="LaneAssignments">
       <EntityTypeMapping TypeName="SwimDataModel.LaneAssignment">
         <MappingFragment StoreEntitySet="LaneAssignment">
-          <ScalarProperty Name="AssignmentDetails" ColumnName="AssignmentDetails" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="StudentName" ColumnName="StudentName" />
           <ScalarProperty Name="StudentPhone" ColumnName="StudentPhone" />
           <ScalarProperty Name="InstructorPhone" ColumnName="InstructorPhone" />

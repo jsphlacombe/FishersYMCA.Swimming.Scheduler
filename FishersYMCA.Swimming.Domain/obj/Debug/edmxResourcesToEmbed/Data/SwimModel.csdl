@@ -31,7 +31,7 @@
     <Property Type="String" Name="InstructorPhone" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="StudentPhone" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="StudentName" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="AssignmentDetails" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Category" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="PoolUsage">
     <Key>

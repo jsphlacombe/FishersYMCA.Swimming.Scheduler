@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c2500b94cb1c41e5855c6719be894a30" Name="Diagram1">
         <EntityTypeShape EntityType="SwimDataModel.Instructor" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SwimDataModel.LaneAssignment" Width="2.25" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SwimDataModel.LaneAssignment" Width="2.25" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SwimDataModel.PoolUsage" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SwimDataModel.sysdiagram" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="false" />
         <AssociationConnector Association="SwimDataModel.FK_LaneAssignment_PoolUsage" ManuallyRouted="false" />

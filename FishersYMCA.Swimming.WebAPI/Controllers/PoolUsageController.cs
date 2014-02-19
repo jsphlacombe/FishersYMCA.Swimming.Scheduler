@@ -87,19 +87,22 @@ namespace FishersYMCA.Swimming.WebAPI.Controllers
                     Lane1 = new SlotDetail
                     {
                         ID = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 1").FirstOrDefault().ID,
-                        Description = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 1").FirstOrDefault().Description
+                        Description = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 1").FirstOrDefault().Description,
+                        Category = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 1").FirstOrDefault().Category
                     },
 
                     Lane2 = new SlotDetail
                     {
                         ID = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 2").FirstOrDefault().ID,
-                        Description = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 2").FirstOrDefault().Description
+                        Description = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 2").FirstOrDefault().Description,
+                        Category = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 2").FirstOrDefault().Category
                     },
 
                     Lane3 = new SlotDetail
                     {
                         ID = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 3").FirstOrDefault().ID,
-                        Description = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 3").FirstOrDefault().Description
+                        Description = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 3").FirstOrDefault().Description,
+                        Category = x.LaneAssignments.Where(s => s.SlotID == x.ID).Where(l => l.Lane == "Lane 3").FirstOrDefault().Category
                     }
                     ////Lane4 = new SlotDetail
                     ////{
