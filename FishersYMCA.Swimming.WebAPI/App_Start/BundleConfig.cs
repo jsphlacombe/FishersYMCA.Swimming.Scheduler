@@ -31,7 +31,7 @@ namespace FishersYMCA.Swimming.WebAPI
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
             "~/Content/Bootstrap/css/bootstrap.css",
-            "~/Content/Bootstrap/css/bootstrap-responsive.css"));
+            "~/Content/Bootstrap/css/bootstrap-theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
             "~/Scripts/app/swim-gen.js"));
@@ -42,6 +42,9 @@ namespace FishersYMCA.Swimming.WebAPI
 
             bundles.Add(new ScriptBundle("~/bundles/require").Include(
             "~/Scripts/require.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+            "~/Scripts/knockout-2.2.0.js"));
         }
     }
 }

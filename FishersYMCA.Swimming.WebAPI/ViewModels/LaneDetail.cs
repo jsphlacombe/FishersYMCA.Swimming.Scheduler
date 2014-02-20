@@ -12,5 +12,6 @@ namespace FishersYMCA.Swimming.WebAPI.ViewModels
         public string StudentPhone { get; set; }
         public string StudentName { get; set; }
         public string Category { get; set; }
+        public string Description { get; set; }
     }
 }

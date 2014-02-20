@@ -187,6 +187,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SwimData.sdf" />
+    <Content Include="Content\Bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\Bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\Bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\jqx.metro.css" />
     <Content Include="Content\scheduler.css" />
     <Content Include="Content\Site.css" />
@@ -298,9 +302,9 @@
     <Content Include="resources\YMCAlogo.png" />
     <Content Include="Scripts\app\lane-detail.js" />
     <Content Include="Scripts\app\scheduler-orig.js" />
-    <Content Include="Scripts\app\pool-schedule.js" />
+    <Content Include="Scripts\app\pool.js" />
     <Content Include="Scripts\app\swim-gen.js" />
-    <Content Include="Scripts\app\time-slot.js" />
+    <Content Include="Scripts\app\time-schedule.js" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.0.js" />
@@ -356,7 +360,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
-    <Folder Include="Content\Bootstrap\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

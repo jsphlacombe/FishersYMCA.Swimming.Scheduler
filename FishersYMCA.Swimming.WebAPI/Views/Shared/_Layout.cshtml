@@ -27,28 +27,13 @@
             </div>
         </div>
     </nav>
-  @*        <div class="content-wrapper">
-            <div class="float-left">
-                
-                <h1>Pool Lanes Scheduler</h1>
-                <h2>Fishers YMCA Aquatics</h2>
-            </div>
-            <div class="float-right">
-                <nav>
-                  <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                    </ul>
-                </nav>
-            </div>
-        </div>*@
 
     @RenderBody()
-
+ @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/require")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
-   
+  
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/app")
 

@@ -38,7 +38,8 @@ namespace FishersYMCA.Swimming.WebAPI.Controllers
                    InstructorPhone = x.InstructorPhone,
                    StudentName = x.StudentName,
                    StudentPhone = x.StudentPhone,
-                   Category = x.Category
+                   Category = x.Category,
+                   Description = x.Description
 
                });
            // return _laneAssignRepository.GetById(Id);
