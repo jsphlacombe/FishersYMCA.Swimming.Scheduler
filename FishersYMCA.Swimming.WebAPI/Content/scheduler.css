@@ -2,10 +2,10 @@
 
 
 body { 
-    font-size:0.8em; 
+    /*font-size:0.8em; */
     margin-top:100px;
 }
-body,input,textarea { font-family:tahoma, sans-serif; }
+/*body,input,textarea { font-family:tahoma, sans-serif; }*/
 
 code {
 	font-size:1.2em;
@@ -14,13 +14,19 @@ code {
 	padding:2px;
 }
 
-#container {
+/*#container {
 	margin:0 auto; padding:0 1em;
 
-}
+}*/
 
 #header,ol,table { cursor:default; }
 
+.navbar-inverse {
+  background-color:#ffffff; 
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
 /* SCHEDULE/TABLES */
 
 /*table {

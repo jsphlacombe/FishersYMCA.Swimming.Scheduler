@@ -32,8 +32,8 @@ define(['./time-schedule'], function (time) {
 
         function init() {
             // Hide Stuff
-            $('#slotDetails').hide();
-            $('#slotDesc').hide();
+            //$('#slotDetails').hide();
+            //$('#slotDesc').hide();
             $entry_section.hide();
             $error.hide();
             $info.hide();
@@ -71,14 +71,36 @@ define(['./time-schedule'], function (time) {
 
             })
 
-            // Whenever entries are created, let them be selectable
-            $(document).on('click', '.LaneAssign', function () {
-                daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
+    
+            //// Whenever entries are created, let them be selectable
+            //$(document).on('click', '.LaneAssign', function () {
+            //   //// daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
+            //    //$(this).popover({
+            //    //    html: true,
+            //    //    animation: false,
+            //    //    content: "TO BE ANNOUNCED",
+            //    //    placement: "right"
+            //    //});
 
+            //});
+            $(document).on('click', '.LaneAssign', function () {
+                $(this).popover({
+                    html: true,
+                    trigger: 'click',
+                    animation: false,
+                    content: function () {
+
+                        return $('#slotDesc').html();
+                    },
+                    placement: "right"
+                });
+
+                daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
 
             });
 
 
+            //, function () { $(this).popover('hide') }
             ////$('#add-row')
             ////    .click(addRow)
             ////    .hover(addRowHighlight, addRowUndoHighlight);

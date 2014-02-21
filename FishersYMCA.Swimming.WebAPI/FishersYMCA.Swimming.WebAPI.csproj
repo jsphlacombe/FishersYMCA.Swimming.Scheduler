@@ -187,8 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SwimData.sdf" />
-    <Content Include="Content\Bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="Content\Bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="Content\Bootstrap\css\bootstrap.css" />
     <Content Include="Content\Bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\jqx.metro.css" />

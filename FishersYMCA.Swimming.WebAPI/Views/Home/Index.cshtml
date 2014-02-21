@@ -2,81 +2,81 @@
 
     <div class="row">
 
-        <div class="span8">
+        <div class="col-md-8">
 
-            <div class="tabbable tabs-above">
-                <ul class="nav nav-tabs" id="scheduleTab">
-                    <li class="active">
-                        <a href="#tabMonday" data-toggle="tab">Monday</a></li>
-                    <li>
-                        <a href="#tabTuesday" data-toggle="tab">Tuesday</a></li>
-                    <li>
-                        <a href="#tabWednesday" data-toggle="tab">Wednesday</a></li>
-                    <li>
-                        <a href="#tabThursday" data-toggle="tab">Thursday</a></li>
-                    <li>
-                        <a href="#tabFriday" data-toggle="tab">Friday</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="tabMonday">
+            <div class="panel panel-info fade in">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pool Schedule</h3>
+                </div>
+                <div class="panel-body">
 
-                        <div class="actions">
+                    <ul class="nav nav-tabs" id="scheduleTab">
+                        <li class="active">
+                            <a href="#tabMonday" data-toggle="tab">Monday</a></li>
+                        <li>
+                            <a href="#tabTuesday" data-toggle="tab">Tuesday</a></li>
+                        <li>
+                            <a href="#tabWednesday" data-toggle="tab">Wednesday</a></li>
+                        <li>
+                            <a href="#tabThursday" data-toggle="tab">Thursday</a></li>
+                        <li>
+                            <a href="#tabFriday" data-toggle="tab">Friday</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in table-responsive" id="tabMonday">
+
+                            @*<div class="actions">
                             <a id="AddLaneAssignment" class="work" href="#" title="Add a pool lane assignment.">Add Pool Assignment</a>
 
+                        </div>*@
+                        </div>
+                        <div class="tab-pane fade table-responsive" id="tabTuesday">
+                        </div>
+                        <div class="tab-pane fade table-responsive" id="tabWednesday">
+                        </div>
+                        <div class="tab-pane fade table-responsive" id="tabThursday">
+                            <span class="label label-info">Thursday Schedule</span>
+                        </div>
+                        <div class="tab-pane fade table-responsive" id="tabFriday">
+                            <span class="label label-info">Friday Schedule</span>
                         </div>
                     </div>
-                    <div class="tab-pane" id="tabTuesday">
-                    </div>
-                    <div class="tab-pane" id="tabWednesday">
-                    </div>
-                    <div class="tab-pane" id="tabThursday">
-                        <span class="label label-info">Thursday Schedule</span>
-                    </div>
-                    <div class="tab-pane" id="tabFriday">
-                        <span class="label label-info">Friday Schedule</span>
-                    </div>
+
                 </div>
+
             </div>
+            </div>
+        <div class="col-md-4">
+            @*<section class="navspy nav-stacked affix">*@
 
-        </div>
-
-        <div class="span4">
-            <div class="panel panel-info">
+                <div id="slotDesc" class="panel panel-info fade in" style="display: none">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">Lane Activity Information</h3>
                     </div>
                     <div class="panel-body">
-                        Panel content
-                    </div>
-                </div>
-            <section class="navspy nav-stacked affix">
-                
-              <div class="panel panel-info">
-                <div id="slotDesc" >
-                    <h4>Pool Activity Information</h4>
-                    <div id="renderHere"></div>
-                    <div data-bind="text: activityDescription" ></div>
-                </div>
+                        
+                            <div data-bind="text: activityDescription"></div>
+                        
 
-              <div id="slotDetails">
-                    <!--Templates-->
-                    <div id="intructorTemplate" >
-                        <h5>Instructor Information:</h5>
-                        <div data-bind="text: instructorName"></div>
-                        <div data-bind="text: instructorPhone"></div>
-                    </div>
-                     <div id="studentTemplate" >
-                        <h5>Student Information:</h5>
-                        <div data-bind="text: studentName"></div>
-                        <div data-bind="text: studentPhone"></div>
+                        <div id="slotDetails">
+                            <!--Templates-->
+                            <div id="intructorTemplate" >
+                                <h4>Instructor Information:</h4>
+                                <div data-bind="text: instructorName"></div>
+                                <div data-bind="text: instructorPhone"></div>
+                            </div>
+                            <div id="studentTemplate" >
+                                <h4>Student Information:</h4>
+                                <div data-bind="text: studentName"></div>
+                                <div data-bind="text: studentPhone"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-              </div>
-            </section>
+            @*</section>*@
         </div>
 
-    </div>
+        </div>
 </div>
        
 

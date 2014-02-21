@@ -14,7 +14,7 @@
     var DaySchedule = function (day) {
         var table = $('<table id="' + day + 'Schedule"></table>');
 
-        table.addClass('table table-bordered table-condensed');
+        table.addClass('table table-condensed');
 
         $('#tab' + day).append(table);
 
@@ -138,7 +138,7 @@
                         // alert(Lane1Obj.ID + "," + Lane2Obj.ID + "," + Lane3Obj.ID);
 
                         table.append($('<tr><th>' + timeblock + '</th>' +
-                          '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
+                          '<td><span rel="popover" class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
                           '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
                           '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
                           '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
@@ -156,8 +156,8 @@
 
         this.GetLaneDetail = function (id) {
 
-            $('#slotDetails').hide();
-            $('#slotDesc').hide();
+            //$('#slotDetails').hide();
+            //$('#slotDesc').hide();
 
             // alert($(this).data("id"));
             $.ajax({
@@ -170,27 +170,11 @@
                         //stringify
                         var jsonData = JSON.stringify(value);
 
-                        // alert(jsonData);
                         //Parse JSON
                         var objData = $.parseJSON(jsonData);
-                        //var objData = $.parseJSON(jsonData);
 
-                        // alert(objData.InstructorName);
-                        // var id = objData.ID;
-                        //var InstName = objData.InstructorName;
-                        //var StudName = objData.StudentName;
-                        //var InstPhone = objData.InstructorPhone;
-                        //var StudPhone = objData.StudentPhone;
                         var category = objData.Category;
 
-
-                        //$('#LaneDetails').text(InstName + ", " + InstPhone + ", " + StudName + ", " + StudPhone + ", " + Category);
-
-                        //var InstName = objData.InstructorName;
-                        //var StudName = objData.StudentName;
-                        //var InstPhone = objData.InstructorPhone;
-                        //var StudPhone = objData.StudentPhone;
-                        //var Category = objData.Category;
 
                         var DetailsViewModel = function () {
                             this.instructorName = objData.InstructorName;
@@ -202,10 +186,11 @@
 
                         ko.applyBindings(new DetailsViewModel());
 
-                        if (category === "Private") 
-                            $('#slotDetails').show();
 
-                        $('#slotDesc').show();
+                        //if (category === "Private") 
+                        //    $('#slotDetails').show();
+
+                        //$('#slotDesc').show();
                     });
                 },
                 error: function (xhr) {

@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
    
-    @Styles.Render("~/Content/bootstrap")
+
     @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/css")
-
-
+   
+    @Styles.Render("~/Content/bootstrap")
+ @Styles.Render("~/Content/css")
 </head>
 <body>
-    <nav class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
+    <nav class="navbar navbar-fixed-top navbar-default " role="navigation">
+        @*<div class="navbar-header">*@
             @*  <a class="brand" href="/">Pool Lanes Scheduler</a>*@
-            <div class="row-fluid">
+            <div >
                 <div class="media">
                     <a class="pull-left" href="http://www.indymca.org/centers/fishers/center-news/">
-                        <img class="media-object" src="~/resources/YMCAlogo.png" />
+                        <img class="media-object img-rounded" src="~/resources/YMCAlogo.png" />
                     </a>
                     <div class="media-body">
-                        <a class="brand" href="/">Fishers YMCA Aquatics Pool Scheduler</a>
+                       @* <a class="brand" href="/">Fishers YMCA Aquatics Pool Scheduler</a>*@
+                        <h2 class="media-heading">Fishers YMCA Aquatics Pool Scheduler</h2>
                     </div>
                 </div>
             </div>
-        </div>
+        @*</div>*@
     </nav>
 
     @RenderBody()
