@@ -71,31 +71,80 @@ define(['./time-schedule'], function (time) {
 
             })
 
-    
-            //// Whenever entries are created, let them be selectable
-            //$(document).on('click', '.LaneAssign', function () {
-            //   //// daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
-            //    //$(this).popover({
-            //    //    html: true,
-            //    //    animation: false,
-            //    //    content: "TO BE ANNOUNCED",
-            //    //    placement: "right"
-            //    //});
-
+            //var detailsPopup = $(this).popover({
+            //    html: true,
+            //    trigger: 'hover',
+            //    animation: false,
+            //    content: function () {
+            //        //return "Test"
+            //        return $('#slotDesc').html();
+            //    },
+            //    placement: "right"
             //});
+
             $(document).on('click', '.LaneAssign', function () {
-                $(this).popover({
+
+                var detailsPopup = $(this).popover({
                     html: true,
-                    trigger: 'click',
+                    trigger: 'hover',
                     animation: false,
                     content: function () {
-
+                        //return "Test"
                         return $('#slotDesc').html();
                     },
                     placement: "right"
                 });
 
-                daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
+                var promise = daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
+
+                promise.done(function (data) {
+                    $.each(data, function (key, value) {
+                        //stringify
+                        var jsonData = JSON.stringify(value);
+
+                        //Parse JSON
+                        var objData = $.parseJSON(jsonData);
+
+                        var category = objData.Category;
+
+
+                        var DetailsViewModel = function () {
+                            this.instructorName = objData.InstructorName;
+                            this.instructorPhone = objData.InstructorPhone;
+                            this.studentName = objData.StudentName;
+                            this.studentPhone = objData.StudentPhone;
+                            this.activityDescription = objData.Description;
+                        }
+
+                        ko.applyBindings(new DetailsViewModel());
+
+                        //$(this).popover({
+                        //    html: true,
+                        //    trigger: 'click',
+                        //    animation: false,
+                        //    content: function () {
+
+                        //        return $('#slotDesc').html();
+                        //    },
+                        //    placement: "right"
+                        //});
+
+                        ////$(".LaneAssign").popover('show');
+
+                        //if (category === "Private") 
+                        //    $('#slotDetails').show();
+
+                        //$('#slotDesc').show();
+                    });
+                }).then(function () {
+             
+                   // alert(detailsPopup.html.innerText);
+                    detailsPopup.popover('show');
+                });
+
+                promise.fail(function (xhr) {
+                    alert(xhr.responseText);
+                });
 
             });
 

@@ -160,43 +160,48 @@
             //$('#slotDesc').hide();
 
             // alert($(this).data("id"));
-            $.ajax({
+            var promise = $.ajax({
                 type: "GET",
                 url: "http://localhost/FishersYMCASwimmingService/Lanes/Detail/" + id,
                 contentType: "json",
-                dataType: "json",
-                success: function (data) {
-                    $.each(data, function (key, value) {
-                        //stringify
-                        var jsonData = JSON.stringify(value);
+                dataType: "json"
+                //success: function (data) {
+                //    $.each(data, function (key, value) {
+                //        //stringify
+                //        var jsonData = JSON.stringify(value);
 
-                        //Parse JSON
-                        var objData = $.parseJSON(jsonData);
+                //        //Parse JSON
+                //        var objData = $.parseJSON(jsonData);
 
-                        var category = objData.Category;
-
-
-                        var DetailsViewModel = function () {
-                            this.instructorName = objData.InstructorName;
-                            this.instructorPhone = objData.InstructorPhone;
-                            this.studentName = objData.StudentName;
-                            this.studentPhone = objData.StudentPhone;
-                            this.activityDescription = objData.Description;
-                        }
-
-                        ko.applyBindings(new DetailsViewModel());
+                //        var category = objData.Category;
 
 
-                        //if (category === "Private") 
-                        //    $('#slotDetails').show();
+                //        var DetailsViewModel = function () {
+                //            this.instructorName = objData.InstructorName;
+                //            this.instructorPhone = objData.InstructorPhone;
+                //            this.studentName = objData.StudentName;
+                //            this.studentPhone = objData.StudentPhone;
+                //            this.activityDescription = objData.Description;
+                //        }
 
-                        //$('#slotDesc').show();
-                    });
-                },
-                error: function (xhr) {
-                    alert(xhr.responseText);
-                }
+                //        ko.applyBindings(new DetailsViewModel());
+
+
+                //        //if (category === "Private") 
+                //        //    $('#slotDetails').show();
+
+                //        //$('#slotDesc').show();
+                //    });
+                //},
+                //error: function (xhr) {
+                //    alert(xhr.responseText);
+                //}
+
             });
+
+            return promise;
+
+
         }
 
         this.GetAllLaneAssignments();
