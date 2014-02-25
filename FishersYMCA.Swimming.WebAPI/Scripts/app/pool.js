@@ -34,6 +34,7 @@ define(['./time-schedule'], function (time) {
             // Hide Stuff
             //$('#slotDetails').hide();
             //$('#slotDesc').hide();
+            $('#errorAlert').hide();
             $entry_section.hide();
             $error.hide();
             $info.hide();
@@ -71,30 +72,33 @@ define(['./time-schedule'], function (time) {
 
             })
 
-            //var detailsPopup = $(this).popover({
-            //    html: true,
-            //    trigger: 'hover',
-            //    animation: false,
-            //    content: function () {
-            //        //return "Test"
-            //        return $('#slotDesc').html();
-            //    },
-            //    placement: "right"
-            //});
 
-            $(document).on('click', '.LaneAssign', function () {
+            $(document).on('click', '.LaneAssign', function (e) {
+
+                //$('.LaneAssign').not(this).popover('hide');
+                var that = this;
 
                 var detailsPopup = $(this).popover({
                     html: true,
-                    trigger: 'hover',
+                    //title: "Lane Activity Information",
+                    title: '<span class="text-info"><strong>Lane Activity Information</strong><span> </span><a class="close" href="#">&times;</a>',
+                    trigger: 'click',
                     animation: false,
                     content: function () {
+
                         //return "Test"
                         return $('#slotDesc').html();
                     },
+
                     placement: "right"
+
+                }).on('shown.bs.popover', function () {
+                    // do something…
+                    $('.LaneAssign').not(this).popover('destroy');
+          
                 });
 
+           
                 var promise = daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
 
                 promise.done(function (data) {
@@ -118,36 +122,32 @@ define(['./time-schedule'], function (time) {
 
                         ko.applyBindings(new DetailsViewModel());
 
-                        //$(this).popover({
-                        //    html: true,
-                        //    trigger: 'click',
-                        //    animation: false,
-                        //    content: function () {
-
-                        //        return $('#slotDesc').html();
-                        //    },
-                        //    placement: "right"
-                        //});
-
-                        ////$(".LaneAssign").popover('show');
-
-                        //if (category === "Private") 
-                        //    $('#slotDetails').show();
-
-                        //$('#slotDesc').show();
                     });
                 }).then(function () {
              
-                   // alert(detailsPopup.html.innerText);
+
                     detailsPopup.popover('show');
+
+                    //reposition the popover on window resize
+                    $(window).resize(function () { if ($('.LaneAssign').is(":visible")) { detailsPopup.popover('show'); } });
+                    
                 });
 
                 promise.fail(function (xhr) {
-                    alert(xhr.responseText);
+                   // $('#errorAlert').hide();
+                    $('#errorAlert').show();
                 });
+
+                e.stopPropagation();
+      
 
             });
 
+            $(document).click(function (e) {
+                if (($(e.target).is('.close'))) {
+                    $('.LaneAssign').popover('destroy');
+                }
+            });
 
             //, function () { $(this).popover('hide') }
             ////$('#add-row')
