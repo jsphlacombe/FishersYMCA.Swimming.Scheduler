@@ -13,7 +13,7 @@
                     <h3 class="panel-title">Pool Schedule</h3>
                 </div>
                 <div class="panel-body">
-
+                    @*<p>Date: <input type="text" id="datepicker"></p>*@
                     <ul class="nav nav-tabs" id="scheduleTab">
                         <li class="active">
                             <a href="#tabMonday" data-toggle="tab">Monday</a></li>
@@ -61,22 +61,24 @@
                     <div class="panel-body">
                         
                             <div data-bind="text: activityDescription"></div>
-                        
-
+                       
                         <div id="slotDetails">
                             <!--Templates-->
                             <div id="intructorTemplate" >
-                                <h5>Instructor Information:</h5>
+                                <strong>Instructor Information:</strong>
                                 <div data-bind="text: instructorName"></div>
                                 <div data-bind="text: instructorPhone"></div>
                             </div>
                             <div id="studentTemplate" >
-                                <h5>Student Information:</h5>
+                                <strong>Student Information:</strong>
                                 <div data-bind="text: studentName"></div>
                                 <div data-bind="text: studentPhone"></div>
                             </div>
                         </div>
+                        <div class="text-info">
                         <button type="button" class="btn btn-primary btn-xs">Change Details</button>
+
+                        </div>
                     </div>
                 </div>
             @*</section>*@

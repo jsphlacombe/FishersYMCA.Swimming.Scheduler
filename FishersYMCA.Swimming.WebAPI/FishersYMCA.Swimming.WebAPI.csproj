@@ -302,7 +302,7 @@
     <Content Include="Scripts\app\scheduler-orig.js" />
     <Content Include="Scripts\app\pool.js" />
     <Content Include="Scripts\app\swim-gen.js" />
-    <Content Include="Scripts\app\time-schedule.js" />
+    <Content Include="Scripts\app\schedule.js" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.0.js" />

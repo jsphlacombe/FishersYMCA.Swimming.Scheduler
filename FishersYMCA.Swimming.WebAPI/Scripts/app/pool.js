@@ -1,5 +1,4 @@
-define(['./time-schedule'], function (time) {
-
+var pool = function() {
         // Initialize some jQuery objects
     var
         $error = $('#error'),
@@ -48,7 +47,7 @@ define(['./time-schedule'], function (time) {
 
             var i;
             for (i = 0; i < daysOfWeek.length; i += 1)
-                daySchedules.push(new time.DaySchedule(daysOfWeek[i]));
+                daySchedules.push(new schedule.DaySchedule(daysOfWeek[i]).GetAllLaneAssignments());
 
             // Activate buttons
             $('#add-entry').click(function () {
@@ -72,6 +71,12 @@ define(['./time-schedule'], function (time) {
 
             })
 
+            //$(function () {
+            //    $("#datepicker").datepicker({
+            //        selectWeek: true,
+            //        closeOnSelect: false
+            //    });
+            //});
 
             $(document).on('click', '.LaneAssign', function (e) {
 
@@ -81,27 +86,26 @@ define(['./time-schedule'], function (time) {
                 var detailsPopup = $(this).popover({
                     html: true,
                     //title: "Lane Activity Information",
-                    title: '<span class="text-info"><strong>Lane Activity Information</strong><span> </span><a class="close" href="#">&times;</a>',
+                    title: '<span class="text-info"><strong>Lane Activity Information</strong><span></span><a class="close" href="#">&times;</a>',
                     trigger: 'click',
                     animation: false,
                     content: function () {
 
-                        //return "Test"
                         return $('#slotDesc').html();
                     },
 
                     placement: "right"
 
                 }).on('shown.bs.popover', function () {
-                    // do something…
+              
                     $('.LaneAssign').not(this).popover('destroy');
           
                 });
 
            
-                var promise = daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
+                var laneSchedule = daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
 
-                promise.done(function (data) {
+                laneSchedule.done(function (data) {
                     $.each(data, function (key, value) {
                         //stringify
                         var jsonData = JSON.stringify(value);
@@ -133,7 +137,7 @@ define(['./time-schedule'], function (time) {
                     
                 });
 
-                promise.fail(function (xhr) {
+                laneSchedule.fail(function (xhr) {
                    // $('#errorAlert').hide();
                     $('#errorAlert').show();
                 });
@@ -149,16 +153,6 @@ define(['./time-schedule'], function (time) {
                 }
             });
 
-            //, function () { $(this).popover('hide') }
-            ////$('#add-row')
-            ////    .click(addRow)
-            ////    .hover(addRowHighlight, addRowUndoHighlight);
-            ////$('#remove-row')
-            ////    .click(removeRow)
-            ////    .hover(removeRowHighlight, removeRowUndoHighlight);
-            ////$('#remove-entries')
-            ////    .click(removeEntries)
-            ////    .hover(removeEntriesHighlight, removeEntriesUndoHighlight);
 
 
             // Prevent text selection on double-click
@@ -558,7 +552,7 @@ define(['./time-schedule'], function (time) {
         };
    // }();
 
-});
+}();
 //; (function ($) {
     /* 
 	 * Random Child (0.1)

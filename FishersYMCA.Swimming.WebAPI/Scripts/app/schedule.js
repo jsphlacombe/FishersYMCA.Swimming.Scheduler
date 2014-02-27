@@ -1,5 +1,4 @@
-﻿define(function () {
-
+﻿var schedule = function() {
     var
     $error = $('#error'),
     $info = $('#info'),
@@ -12,6 +11,27 @@
 
     //function object for the day's schedule
     var DaySchedule = function (day) {
+
+        //var table1 = $('<table id="' + day + 'Schedule">' +
+        //    '<thead>' +
+        //    '<tr><th>Time</th><th>Lane 1</th><th>Lane 2</th><th>Lane 3</th><th>Lane 4</th><th>Lane 5</th><th>Lane 6</th><th>Lane 7</th></tr>' +
+        //    '</thead>' +
+        //    '<tbody data-bind="foreach: timeslots">' +
+        //    '<tr>' +
+        //     '<td><span LaneAssign" data-id="' + Lane1Obj.ID + '"data-bind="text: time"></span></td>' +
+        //     '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '"data-bind="text: time"></span></td>' +
+        //     '<td data-bind="text: lane1"></td>' +
+        //     '<td data-bind="text: lane2"></td>' +
+        //     '<td data-bind="text: lane3"></td>' +
+        //     '<td data-bind="text: lane4"></td>' +
+        //     '<td data-bind="text: lane5"></td>' +
+        //     '<td data-bind="text: lane6"></td>' +
+        //     '<td data-bind="text: lane7"></td>' +
+        //     '<td><a href="#" data-bind="click: $parent.removeBook">Remove</a></td>' +
+        //    '</tr>' +
+        //    '</tbody>' +
+        //    '</table>');
+
         var table = $('<table id="' + day + 'Schedule"></table>');
 
         table.addClass('table table-condensed');
@@ -90,6 +110,10 @@
 
         this.GetAllLaneAssignments = function () {
             //Apply Table Column  Headers
+
+
+
+
             table.append($('<thead><tr><th>Time</th>' +
                 '<th>Lane 1</th>' +
                 '<th>Lane 2</th>' +
@@ -103,12 +127,12 @@
 
             $.ajax({
                 type: "GET",
-                url: "http://localhost/FishersYMCASwimmingService/Lanes/Schedule/Day/" + day,
+                url: "/FishersYMCASwimmingService/Lanes/Schedule/Day/" + day,
                 contentType: "json",
                 dataType: "json",
                 success: function (data) {
 
-
+      
 
                     $.each(data, function (key, value) {
                         //stringify
@@ -138,7 +162,7 @@
                         // alert(Lane1Obj.ID + "," + Lane2Obj.ID + "," + Lane3Obj.ID);
 
                         table.append($('<tr><th>' + timeblock + '</th>' +
-                          '<td><span rel="popover" class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
+                          '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
                           '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
                           '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
                           '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
@@ -152,62 +176,27 @@
                     alert(xhr.responseText);
                 }
             });
+
+            return this;
         }
 
         this.GetLaneDetail = function (id) {
 
-            //$('#slotDetails').hide();
-            //$('#slotDesc').hide();
-
-            // alert($(this).data("id"));
-            var promise = $.ajax({
+            return $.ajax({
                 type: "GET",
-                url: "http://localhost/FishersYMCASwimmingService/Lanes/Detail/" + id,
+                url: "/FishersYMCASwimmingService/Lanes/Detail/" + id,
                 contentType: "json",
                 dataType: "json"
-                //success: function (data) {
-                //    $.each(data, function (key, value) {
-                //        //stringify
-                //        var jsonData = JSON.stringify(value);
 
-                //        //Parse JSON
-                //        var objData = $.parseJSON(jsonData);
-
-                //        var category = objData.Category;
-
-
-                //        var DetailsViewModel = function () {
-                //            this.instructorName = objData.InstructorName;
-                //            this.instructorPhone = objData.InstructorPhone;
-                //            this.studentName = objData.StudentName;
-                //            this.studentPhone = objData.StudentPhone;
-                //            this.activityDescription = objData.Description;
-                //        }
-
-                //        ko.applyBindings(new DetailsViewModel());
-
-
-                //        //if (category === "Private") 
-                //        //    $('#slotDetails').show();
-
-                //        //$('#slotDesc').show();
-                //    });
-                //},
-                //error: function (xhr) {
-                //    alert(xhr.responseText);
-                //}
 
             });
 
-            return promise;
-
-
         }
 
-        this.GetAllLaneAssignments();
     };
 
     return {
         DaySchedule: DaySchedule
     };
-});
+
+}();
