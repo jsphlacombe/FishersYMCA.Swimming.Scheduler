@@ -112,7 +112,25 @@
             //Apply Table Column  Headers
 
 
-
+            ////var table1 = $('<table id="' + day + 'Schedule">' +
+            ////    '<thead>' +
+            ////    '<tr><th>Time</th><th>Lane 1</th><th>Lane 2</th><th>Lane 3</th><th>Lane 4</th><th>Lane 5</th><th>Lane 6</th><th>Lane 7</th></tr>' +
+            ////    '</thead>' +
+            ////    '<tbody data-bind="foreach: timeslots">' +
+            ////    '<tr>' +
+            ////     '<td><span LaneAssign" data-id="' + Lane1Obj.ID + '"data-bind="text: time"></span></td>' +
+            ////     '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '"data-bind="text: time"></span></td>' +
+            ////     '<td data-bind="text: lane1"></td>' +
+            ////     '<td data-bind="text: lane2"></td>' +
+            ////     '<td data-bind="text: lane3"></td>' +
+            ////     '<td data-bind="text: lane4"></td>' +
+            ////     '<td data-bind="text: lane5"></td>' +
+            ////     '<td data-bind="text: lane6"></td>' +
+            ////     '<td data-bind="text: lane7"></td>' +
+            ////     '<td><a href="#" data-bind="click: $parent.removeBook">Remove</a></td>' +
+            ////    '</tr>' +
+            ////    '</tbody>' +
+            ////    '</table>');
 
             table.append($('<thead><tr><th>Time</th>' +
                 '<th>Lane 1</th>' +
@@ -125,58 +143,105 @@
                 '</tr></thead>'));
 
 
-            $.ajax({
+            var poolScheds = $.ajax({
                 type: "GET",
                 url: "/FishersYMCASwimmingService/Lanes/Schedule/Day/" + day,
                 contentType: "json",
-                dataType: "json",
-                success: function (data) {
-
-      
-
-                    $.each(data, function (key, value) {
-                        //stringify
-                        var jsonData = JSON.stringify(value);
-
-                        //Parse JSON
-                        var objData = $.parseJSON(jsonData);
-
-
-                        var Lane1Obj = objData.Lane1;
-                        var Lane2Obj = objData.Lane2;
-                        var Lane3Obj = objData.Lane3;
-
-                        //var id = Lane1Obj.ID;
-                        var day = objData.Day;
-                        var timeblock = objData.Time;
-                        var lane = objData.Lane;
-                        var lane1 = Lane1Obj.Description;
-                        var lane2 = objData.Lane2;
-                        var lane3 = objData.Lane3;
-                        var lane4 = objData.Lane4;
-                        var lane5 = objData.Lane5;
-                        var lane6 = objData.Lane6;
-                        var lane7 = objData.Lane7;
-
-
-                        // alert(Lane1Obj.ID + "," + Lane2Obj.ID + "," + Lane3Obj.ID);
-
-                        table.append($('<tr><th>' + timeblock + '</th>' +
-                          '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
-                          '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
-                          '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
-                          '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
-                          '<td><span class="entry-' + "undefined" + ' ">' + lane5 + '</span></td>' +
-                          '<td><span class="entry-' + "undefined" + ' ">' + lane6 + '</span></td>' +
-                          '<td><span class="entry-' + "undefined" + ' ">' + lane7 + '</span></td></tr>'));
-
-                    });
-                },
-                error: function (xhr) {
-                    alert(xhr.responseText);
-                }
+                dataType: "json"
             });
 
+            poolScheds.done(function (data) {
+
+                $.each(data, function (key, value) {
+                    //stringify
+                    var jsonData = JSON.stringify(value);
+
+                    //Parse JSON
+                    var objData = $.parseJSON(jsonData);
+
+
+                    var Lane1Obj = objData.Lane1;
+                    var Lane2Obj = objData.Lane2;
+                    var Lane3Obj = objData.Lane3;
+
+                    //var id = Lane1Obj.ID;
+                    var day = objData.Day;
+                    var timeblock = objData.Time;
+                    var lane = objData.Lane;
+                    var lane1 = Lane1Obj.Description;
+                    var lane2 = objData.Lane2;
+                    var lane3 = objData.Lane3;
+                    var lane4 = objData.Lane4;
+                    var lane5 = objData.Lane5;
+                    var lane6 = objData.Lane6;
+                    var lane7 = objData.Lane7;
+
+
+                    var PoolViewModel = {
+                        timeslots: ko.observableArray([
+                            {
+                                day: objData.Day, timeblock: objData.Time, lane1: [{ id: Lane1Obj.ID, category: Lane1Obj.Category, description: Lane1Obj.Description }],
+                                lane2: [{ id: Lane2Obj.ID, category: Lane2Obj.Category, description: Lane2Obj.Description }],
+                                lane3: [{ id: Lane3Obj.ID, category: Lane3Obj.Category, description: Lane3Obj.Description }],
+                            }])
+
+                    };
+
+                        //        ko.applyBindings(new DetailsViewModel());
+
+                    //////table1.append($('<tr><th>' + timeblock + '</th>' +
+                    //////  '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
+                    //////  '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
+                    //////  '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
+                    //////  '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
+                    //////  '<td><span class="entry-' + "undefined" + ' ">' + lane5 + '</span></td>' +
+                    //////  '<td><span class="entry-' + "undefined" + ' ">' + lane6 + '</span></td>' +
+                    //////  '<td><span class="entry-' + "undefined" + ' ">' + lane7 + '</span></td></tr>'));
+
+
+                    table.append($('<tr><th>' + timeblock + '</th>' +
+                      '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
+                      '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
+                      '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
+                      '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
+                      '<td><span class="entry-' + "undefined" + ' ">' + lane5 + '</span></td>' +
+                      '<td><span class="entry-' + "undefined" + ' ">' + lane6 + '</span></td>' +
+                      '<td><span class="entry-' + "undefined" + ' ">' + lane7 + '</span></td></tr>'));
+
+                });
+            });
+
+            poolScheds.fail = (function (xhr) {
+                // $('#errorAlert').hide();
+                $('#errorAlert').show();
+            });
+
+           
+
+
+            //laneSchedule.done(function (data) {
+            //    $.each(data, function (key, value) {
+            //        //stringify
+            //        var jsonData = JSON.stringify(value);
+
+            //        //Parse JSON
+            //        var objData = $.parseJSON(jsonData);
+
+            //        var category = objData.Category;
+
+
+            //        var DetailsViewModel = function () {
+            //            this.instructorName = objData.InstructorName;
+            //            this.instructorPhone = objData.InstructorPhone;
+            //            this.studentName = objData.StudentName;
+            //            this.studentPhone = objData.StudentPhone;
+            //            this.activityDescription = objData.Description;
+            //        }
+
+            //        ko.applyBindings(new DetailsViewModel());
+
+            //    });
+            //})
             return this;
         }
 

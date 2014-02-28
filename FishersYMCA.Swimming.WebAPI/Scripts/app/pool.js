@@ -102,7 +102,10 @@ var pool = function() {
           
                 });
 
-           
+                //TODO: Need to map JSON data to timeslots array for binding to template using knockout
+
+                
+
                 var laneSchedule = daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
 
                 laneSchedule.done(function (data) {
@@ -115,7 +118,6 @@ var pool = function() {
 
                         var category = objData.Category;
 
-
                         var DetailsViewModel = function () {
                             this.instructorName = objData.InstructorName;
                             this.instructorPhone = objData.InstructorPhone;
@@ -124,9 +126,11 @@ var pool = function() {
                             this.activityDescription = objData.Description;
                         }
 
-                        ko.applyBindings(new DetailsViewModel());
+                       ko.applyBindings(new DetailsViewModel());
 
                     });
+
+                   
                 }).then(function () {
              
 
