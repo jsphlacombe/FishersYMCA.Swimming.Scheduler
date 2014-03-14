@@ -31,6 +31,7 @@ C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimmi
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\Castle.Windsor.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\EntityFramework.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\Newtonsoft.Json.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Web.Helpers.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Web.Http.xml
@@ -42,7 +43,6 @@ C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimmi
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Web.WebPages.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Web.WebPages.Razor.xml
-C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\Newtonsoft.Json.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\Microsoft.Data.Edm.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\Microsoft.Data.OData.xml
 C:\Users\Joseph LaCombe\documents\visual studio 2012\Projects\FishersYMCA.Swimming.Scheduler\FishersYMCA.Swimming.WebAPI\bin\System.Spatial.xml

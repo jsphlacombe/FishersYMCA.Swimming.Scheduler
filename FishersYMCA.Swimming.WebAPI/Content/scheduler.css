@@ -97,60 +97,43 @@ thead th,tbody td { width:50px; min-width:120px; }*/
 
 /* ENTRIES */
 
-.entry-Lap {
+.LaneAssign {
 	display:block; float:left;
 	margin:5px; padding:5px;
 	border:1px solid #aaa;
     width:100%;
     height:100%;
-	/*background-color:#700; color:#700;*/
     cursor:pointer;
+}
+
+span[data-category ~='Lap'] {
+
 	border-color:#070;
 	background-color:#aea; color:#070;
 }
 
-.entry-Private  {
-	display:block; float:left;
-	margin:5px; padding:5px;
-	border:1px solid #aaa;
-    width:100%;
-    height:100%;
-	cursor:pointer;
+span[data-category ~='Private']  {
+
 	border-color:#000677;
 	background-color:#aad3ee; color:#000677;
 }
 
-.entry-Youth {
-	display:block; float:left;
-	margin:5px; padding:5px;
-	border:1px solid #aaa;
-    width:100%;
-    height:100%;
-	cursor:pointer;
-	border-color:#000677;
-	background-color:#aad3ee; color:#000677;
+span[data-category ~='Youth'] {
+
+	/*border-color:#000677;*/
+	/*background-color:#aad3ee; color:#000677;*/
     border-color:#700;
 	background-color:#eaa; color:#700;
 }
 
-.entry-Open {
-	display:block; float:left;
-	margin:5px; padding:5px;
-	border:1px solid #aaa;
-    width:100%;
-    height:100%;
-	cursor:pointer;
+span[data-category ~='Open'] {
+
 	border-color:#ff6a00;
 	background-color:#fcb786; color:#a05017;
 }
 
-.entry-undefined{
-	display:block; float:left;
-	margin:5px; padding:5px;
-	border:1px solid #aaa;
-    width:100%;
-    height:100%;
-	cursor:pointer;
+span[data-category ~='undefined'] {
+
 	border-color:#333;
 	background-color:#aaa; color:#333;
 }

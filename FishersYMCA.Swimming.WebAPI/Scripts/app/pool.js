@@ -7,7 +7,7 @@ var pool = function() {
         $entry_name = $('#entry-name'),
         $clone = $('#clone'),
         $generate = $('#generate'),
-        $addLane = $('#AddLaneAssignment');
+        $addLane = $('#AddLaneAssignment'),
         $addEntry =  $('#add-entry');
 
         // My extensions========================================
@@ -44,7 +44,7 @@ var pool = function() {
             var daySchedules = [];
             var schedIdx = 0;
 
-
+           
             var i;
             for (i = 0; i < daysOfWeek.length; i += 1)
                 daySchedules.push(new schedule.DaySchedule(daysOfWeek[i]).GetAllLaneAssignments());
@@ -78,10 +78,8 @@ var pool = function() {
             //    });
             //});
 
-            $(document).on('click', '.LaneAssign', function (e) {
+            $('#scheduleContainer').on('click', '.LaneAssign', function (e) {
 
-                //$('.LaneAssign').not(this).popover('hide');
-                var that = this;
 
                 var detailsPopup = $(this).popover({
                     html: true,
@@ -104,7 +102,6 @@ var pool = function() {
 
                 //TODO: Need to map JSON data to timeslots array for binding to template using knockout
 
-                
 
                 var laneSchedule = daySchedules[schedIdx].GetLaneDetail($(this).data("id"));
 
@@ -151,7 +148,7 @@ var pool = function() {
 
             });
 
-            $(document).click(function (e) {
+            $('#scheduleContainer').click(function (e) {
                 if (($(e.target).is('.close'))) {
                     $('.LaneAssign').popover('destroy');
                 }

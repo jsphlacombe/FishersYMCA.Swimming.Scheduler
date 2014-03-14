@@ -200,13 +200,13 @@
 
 
                     table.append($('<tr><th>' + timeblock + '</th>' +
-                      '<td><span class="entry-' + Lane1Obj.Category + ' LaneAssign" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
-                      '<td><span class="entry-' + Lane2Obj.Category + ' LaneAssign" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
-                      '<td><span class="entry-' + Lane3Obj.Category + ' LaneAssign" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
-                      '<td><span class="entry-' + "undefined" + ' ">' + lane4 + '</span></td>' +
-                      '<td><span class="entry-' + "undefined" + ' ">' + lane5 + '</span></td>' +
-                      '<td><span class="entry-' + "undefined" + ' ">' + lane6 + '</span></td>' +
-                      '<td><span class="entry-' + "undefined" + ' ">' + lane7 + '</span></td></tr>'));
+                      '<td><span class="LaneAssign" data-category="' + Lane1Obj.Category + '" data-id="' + Lane1Obj.ID + '">' + Lane1Obj.Description + '</span></td>' +
+                      '<td><span class="LaneAssign" data-category="' + Lane2Obj.Category + '" data-id="' + Lane2Obj.ID + '">' + Lane2Obj.Description + '</span></td>' +
+                      '<td><span class="LaneAssign" data-category="' + Lane3Obj.Category + '" data-id="' + Lane3Obj.ID + '">' + Lane3Obj.Description + '</span></td>' +
+                      '<td><span class="LaneAssign" data-category="undefined">' + lane4 + '</span></td>' +
+                      '<td><span class="LaneAssign" data-category="undefined">' + lane5 + '</span></td>' +
+                      '<td><span class="LaneAssign" data-category="undefined">' + lane6 + '</span></td>' +
+                      '<td><span class="LaneAssign" data-category="undefined">' + lane7 + '</span></td></tr>'));
 
                 });
             });
@@ -259,6 +259,7 @@
         }
 
     };
+
 
     return {
         DaySchedule: DaySchedule
